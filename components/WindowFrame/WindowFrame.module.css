@@ -1,0 +1,198 @@
+.frame {
+  background: var(--bg-window);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.frame:hover {
+  border-color: var(--border-light);
+}
+
+/* Light mode outset bevel + brutalist shadow override */
+[data-theme="light"] .frame {
+  border-top: 1px solid var(--bezel-light) !important;
+  border-left: 1px solid var(--bezel-light) !important;
+  border-right: 1px solid var(--bezel-dark) !important;
+  border-bottom: 1px solid var(--bezel-dark) !important;
+  box-shadow: 1px 1px 0 0 var(--bezel-darkest), var(--brutalist-shadow) !important;
+  border-radius: var(--radius-sm); /* retro square corners */
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+[data-theme="light"] .frame:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 2px 2px 0 0 var(--bezel-darkest), 6px 6px 0px 0px var(--bezel-darkest) !important;
+}
+
+/* Title bar */
+.titleBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--titlebar-bg);
+  border-bottom: 1px solid var(--border);
+  min-height: 32px;
+  user-select: none;
+}
+
+[data-theme="light"] .titleBar {
+  border-bottom-color: var(--border);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+[data-theme="light"] .dots {
+  display: none; /* Hide Mac dots in light mode */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dotClose { background: var(--titlebar-dot-close); }
+.dotMin { background: var(--titlebar-dot-min); }
+.dotMax { background: var(--titlebar-dot-max); }
+
+/* Mac OS System 7 horizontal gray parallel lines pattern */
+.titleLines {
+  display: none;
+}
+
+[data-theme="light"] .titleLines {
+  display: block;
+  flex: 1;
+  height: 6px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    var(--border) 1px,
+    var(--border) 2px
+  );
+  opacity: 0.6;
+}
+
+.titleBadge {
+  display: flex;
+  align-items: center;
+}
+
+[data-theme="light"] .titleBadge {
+  background: var(--titlebar-bg);
+  padding: 0 var(--space-sm);
+}
+
+.title {
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="light"] .title {
+  color: var(--text-primary);
+}
+
+/* Right Windows-style Bezel Rectangles */
+.windowControls {
+  display: none;
+}
+
+[data-theme="light"] .windowControls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.controlBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--bezel-light);
+  border-left: 1px solid var(--bezel-light);
+  border-right: 1px solid var(--bezel-dark);
+  border-bottom: 1px solid var(--bezel-dark);
+  box-shadow: 0.5px 0.5px 0 0 var(--bezel-darkest);
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--text-primary);
+  user-select: none;
+  cursor: pointer;
+}
+
+.controlBtn:active {
+  border-top: 1px solid var(--bezel-dark);
+  border-left: 1px solid var(--bezel-dark);
+  border-right: 1px solid var(--bezel-light);
+  border-bottom: 1px solid var(--bezel-light);
+  box-shadow: inset 0.5px 0.5px 0 0 var(--bezel-darkest);
+  padding-top: 1px;
+  padding-left: 1px;
+}
+
+.body {
+  padding: var(--space-md);
+}
+
+/* Variants */
+.notepad .titleBar {
+  background: var(--bg-tertiary);
+}
+
+.notepad .body {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+
+.terminal {
+  /* Terminal always stays dark — retro CRT on any desktop */
+  background: #0a0a0a;
+  border-color: #333;
+}
+
+.terminal .titleBar {
+  background: #0d0d0d;
+}
+
+.terminal .title {
+  color: #88cc88;
+}
+
+.terminal .body {
+  background: #0a0a0a;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: #88cc88;
+}
+
+.folder .titleBar {
+  background: var(--bg-tertiary);
+}
+
+.folder .title::before {
+  content: "📁 ";
+}
+
+/* Compact variant (no body padding) */
+.compact .body {
+  padding: 0;
+}

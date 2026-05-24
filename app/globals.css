@@ -1,0 +1,416 @@
+/* ============================================
+   DESIGN SYSTEM — Gamified Retro Portfolio
+   ============================================ */
+
+/* --- Color Tokens (Dark Mode — Default) --- */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --bg-window: #141414;
+  --bg-card: #161616;
+  --bg-hover: #1e1e1e;
+
+  /* Borders */
+  --border: #2a2a2a;
+  --border-light: #3a3a3a;
+  --border-hover: #4a4a4a;
+
+  /* Text */
+  --text-primary: #e8e8e8;
+  --text-secondary: #999999;
+  --text-tertiary: #666666;
+  --text-muted: #555555;
+
+  /* Bezel Highlights (Dark Mode is flatter, but holds solid borders) */
+  --bezel-light: #222222;
+  --bezel-dark: #0a0a0a;
+  --bezel-darkest: #000000;
+  --brutalist-shadow: 4px 4px 0px 0px var(--accent-pink-dim);
+
+  /* Accents */
+  --accent-pink: #f0a0c0;
+  --accent-pink-dim: #f0a0c033;
+  --accent-purple: #b8a0d4;
+  --accent-purple-dim: #b8a0d433;
+  --accent-green: #88cc88;
+  --accent-green-dim: #88cc8833;
+  --accent-yellow: #d4c890;
+  --accent-yellow-dim: #d4c89033;
+  --accent-blue: #90b8d4;
+  --accent-blue-dim: #90b8d433;
+  --accent-orange: #d4a870;
+  --accent-orange-dim: #d4a87033;
+
+  /* Window chrome */
+  --titlebar-bg: #1a1a1a;
+  --titlebar-dot-close: #ff5f57;
+  --titlebar-dot-min: #ffbd2e;
+  --titlebar-dot-max: #28c840;
+
+  /* Theme-aware surfaces */
+  --nav-bg: rgba(10, 10, 10, 0.9);
+  --dot-grid-color: #1a1a1a;
+
+  /* Spacing scale */
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Border radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'Fira Code', monospace;
+
+  /* Font sizes */
+  --text-2xs: 0.55rem;
+  --text-xs: 0.65rem;
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.35rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+
+  /* Layout */
+  --max-width: 1200px;
+  --nav-height: 48px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* --- Light Mode — Retro OS Desktop Style --- */
+[data-theme="light"] {
+  /* Backgrounds — Classic Mac/Windows 95 light gray */
+  --bg-primary: #e8e8e8;
+  --bg-secondary: #f0f0f0;
+  --bg-tertiary: #f5f5f5;
+  --bg-window: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #ececec;
+
+  /* Borders — Crisp 1px lines, medium gray */
+  --border: #c0c0c0;
+  --border-light: #b0b0b0;
+  --border-hover: #999999;
+
+  /* Text — High contrast for readability */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-tertiary: #777777;
+  --text-muted: #999999;
+
+  /* Bezel Highlights (Classic Windows 95 3D bevels) */
+  --bezel-light: #ffffff;
+  --bezel-dark: #808080;
+  --bezel-darkest: #000000;
+  --brutalist-shadow: 4px 4px 0px 0px #000000;
+
+  /* Accents — Slightly deeper for light bg contrast */
+  --accent-pink: #d4698e;
+  --accent-pink-dim: #d4698e1a;
+  --accent-purple: #8b6aad;
+  --accent-purple-dim: #8b6aad1a;
+  --accent-green: #3d8c3d;
+  --accent-green-dim: #3d8c3d1a;
+  --accent-yellow: #a0893a;
+  --accent-yellow-dim: #a0893a1a;
+  --accent-blue: #4a80a8;
+  --accent-blue-dim: #4a80a81a;
+  --accent-orange: #b07830;
+  --accent-orange-dim: #b078301a;
+
+  /* Window chrome — Light title bars */
+  --titlebar-bg: #e0e0e0;
+  --titlebar-dot-close: #ff5f57;
+  --titlebar-dot-min: #ffbd2e;
+  --titlebar-dot-max: #28c840;
+
+  /* Theme-aware surfaces */
+  --nav-bg: rgba(232, 232, 232, 0.92);
+  --dot-grid-color: #d8d8d8;
+
+  /* Shadows — Softer for light backgrounds */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Theme transition on everything (smooth toggle, active only during transition) */
+html.theme-toggling,
+html.theme-toggling * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + var(--space-lg));
+}
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+
+  /* Dot-grid background pattern */
+  background-image: radial-gradient(circle, var(--dot-grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+a {
+  color: var(--accent-pink);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-purple);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-pink);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent-pink);
+  color: var(--bg-primary);
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* --- Animation Keyframes --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Section Layout --- */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+/* --- Utility: sr-only --- */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --- Retro Button Base --- */
+.retroButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.retroButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent-pink);
+  color: var(--accent-pink);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.retroButton:active {
+  transform: translateY(0);
+}
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* --- Retro Bezel & Neobrutalist Utilities --- */
+.outsetBezel {
+  border-top: 1px solid var(--bezel-light) !important;
+  border-left: 1px solid var(--bezel-light) !important;
+  border-right: 1px solid var(--bezel-dark) !important;
+  border-bottom: 1px solid var(--bezel-dark) !important;
+  box-shadow: 1px 1px 0 0 var(--bezel-darkest) !important;
+}
+
+.insetBezel {
+  border-top: 1px solid var(--bezel-dark) !important;
+  border-left: 1px solid var(--bezel-dark) !important;
+  border-right: 1px solid var(--bezel-light) !important;
+  border-bottom: 1px solid var(--bezel-light) !important;
+  box-shadow: inset 1px 1px 0 0 var(--bezel-darkest) !important;
+}
+
+.neobrutalistShadow {
+  box-shadow: var(--brutalist-shadow) !important;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.neobrutalistShadow:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0px 0px var(--bezel-darkest) !important;
+}

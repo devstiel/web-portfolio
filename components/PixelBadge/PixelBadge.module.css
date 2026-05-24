@@ -1,0 +1,61 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 3px 8px;
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  line-height: 1.4;
+  transition: all var(--transition-fast);
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+}
+
+/* Variants */
+.default {
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border-color: var(--border);
+}
+
+.accent {
+  color: var(--accent-pink);
+  background: var(--accent-pink-dim);
+  border-color: var(--accent-pink);
+}
+
+.purple {
+  color: var(--accent-purple);
+  background: var(--accent-purple-dim);
+  border-color: var(--accent-purple);
+}
+
+.success {
+  color: var(--accent-green);
+  background: var(--accent-green-dim);
+  border-color: var(--accent-green);
+}
+
+.warning {
+  color: var(--accent-yellow);
+  background: var(--accent-yellow-dim);
+  border-color: var(--accent-yellow);
+}
+
+.legendary {
+  color: var(--accent-orange);
+  background: var(--accent-orange-dim);
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 8px var(--accent-orange-dim);
+}
+
+.blue {
+  color: var(--accent-blue);
+  background: var(--accent-blue-dim);
+  border-color: var(--accent-blue);
+}

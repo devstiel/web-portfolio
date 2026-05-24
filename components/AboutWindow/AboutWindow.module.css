@@ -1,0 +1,203 @@
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-xl);
+}
+
+/* Left — notepad file content */
+.fileContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.notepadContainer {
+  position: relative;
+  width: 100%;
+}
+
+.bioText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  counter-reset: line;
+}
+
+.bioPara {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  position: relative;
+  padding-left: var(--space-xl);
+}
+
+.bioPara::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 22px;
+  text-align: right;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  user-select: none;
+  border-right: 1px solid var(--border);
+  padding-right: var(--space-sm);
+}
+
+/* Personality tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Right sidebar — mission, quests, facts */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.sideCard {
+  padding: var(--space-md);
+  background: var(--bg-window);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sideLabel {
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--accent-purple);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sideText {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.questList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.questItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding: var(--space-xs) var(--space-sm);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.questItem:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-light);
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+.questItem.completed {
+  color: var(--text-tertiary);
+}
+
+.questItem.completed .questText {
+  text-decoration: line-through;
+}
+
+.checkboxIcon {
+  color: var(--accent-pink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1;
+}
+
+.questItem.completed .checkboxIcon {
+  color: var(--text-muted);
+}
+
+.factsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.factItem {
+  width: 100%;
+  text-align: left;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: var(--space-md);
+  position: relative;
+  cursor: pointer;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.factItem:hover {
+  color: var(--text-primary);
+  transform: translateX(2px);
+}
+
+.factItem::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--accent-pink);
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .numbers {
+    display: none;
+  }
+}
+
+/* ====================================================
+   Light Mode Bezel and Neobrutalist Shadow Overrides
+   ==================================================== */
+
+[data-theme="light"] .sideCard {
+  border-top: 1px solid var(--bezel-light) !important;
+  border-left: 1px solid var(--bezel-light) !important;
+  border-right: 1px solid var(--bezel-dark) !important;
+  border-bottom: 1px solid var(--bezel-dark) !important;
+  box-shadow: 1px 1px 0 0 var(--bezel-darkest), var(--brutalist-shadow) !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--bg-window) !important;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast) !important;
+}
+
+[data-theme="light"] .sideCard:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 2px 2px 0 0 var(--bezel-darkest), 6px 6px 0px 0px var(--bezel-darkest) !important;
+}

@@ -1,0 +1,218 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-height);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  height: 100%;
+}
+
+/* Logo / brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brandIcon {
+  font-size: var(--text-lg);
+}
+
+.brandName {
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent-pink);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+/* Desktop menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 6px 12px;
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.menuLink:hover {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+  border-color: var(--border);
+}
+
+.menuLink.active {
+  color: var(--accent-pink);
+  background: var(--accent-pink-dim);
+  border-color: var(--accent-pink);
+}
+
+.menuIcon {
+  font-size: 10px;
+}
+
+/* Right-side actions (toggle + hamburger) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* SFX speaker toggle button */
+.muteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  height: 34px;
+  padding: 0 var(--space-sm);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.muteBtn:hover {
+  border-color: var(--accent-pink);
+  background: var(--bg-hover);
+  transform: translateY(-1px);
+}
+
+.muteBtn:active {
+  transform: translateY(0);
+}
+
+.speakerIcon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.muteLabel {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.muteBtn:hover .muteLabel {
+  color: var(--accent-pink);
+}
+
+.muted {
+  border-color: var(--border);
+}
+
+/* Mobile hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  cursor: pointer;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.hamburgerLine {
+  display: block;
+  width: 16px;
+  height: 1.5px;
+  background: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+/* Mobile dropdown */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-sm);
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mobileMenu.open {
+  display: flex;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px var(--space-md);
+  font-family: var(--font-pixel);
+  font-size: var(--text-2xs);
+  color: var(--text-secondary);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.mobileLink:hover,
+.mobileLink.active {
+  color: var(--accent-pink);
+  background: var(--accent-pink-dim);
+  border-color: var(--accent-pink);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .brandName {
+    font-size: 7px;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}

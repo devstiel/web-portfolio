@@ -1,0 +1,737 @@
+.terminalWrapper {
+  cursor: text;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.compactFrame {
+  width: 100%;
+}
+
+.shellHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 34px;
+  padding: 8px var(--space-md);
+  color: #7ccf7c;
+  background: #050805;
+  border: 1px solid #142414;
+  border-bottom: none;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  overflow-x: auto;
+}
+
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #55ff55;
+  white-space: nowrap;
+}
+
+.statusPill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #55ff55;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(85, 255, 85, 0.7);
+}
+
+.terminalContent {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  height: min(64vh, 560px);
+  min-height: 420px;
+  overflow-y: auto;
+  background: #080b08; /* Vintage slate-green dark terminal background */
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  position: relative;
+  border: 1px solid #142414;
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.95);
+  scrollbar-width: thin;
+  scrollbar-color: #1a331a #080b08;
+  text-align: left; /* Explicitly left-align terminal logs */
+  contain: layout paint;
+}
+
+.landingMode .terminalContent {
+  height: min(78vh, 720px);
+  min-height: 560px;
+  padding: var(--space-lg);
+}
+
+/* Retro CRT phosphor sweep and glass curvature overlay */
+.terminalContent::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.18) 50%
+  );
+  background-size: 100% 4px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.terminalContent::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: radial-gradient(
+    circle, 
+    rgba(0, 0, 0, 0) 65%, 
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 11;
+  pointer-events: none;
+}
+
+.scanlineOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(85, 255, 85, 0) 0%,
+    rgba(85, 255, 85, 0.04) 8%,
+    rgba(85, 255, 85, 0) 16%
+  );
+  z-index: 12;
+  pointer-events: none;
+  opacity: 0.65;
+  animation: scanlineSweep 12s linear infinite;
+}
+
+@keyframes scanlineSweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.terminalLine {
+  color: #55ff55; /* Highly glowing phosphorescent light green */
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  text-shadow: 0 0 3px rgba(85, 255, 85, 0.5);
+  position: relative;
+  z-index: 5;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.terminalPrompt {
+  color: #ff66cc; /* Bright pink terminal prompt */
+  user-select: none;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(255, 102, 204, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.terminalSplash {
+  position: relative;
+  z-index: 5;
+  min-height: calc(100% - var(--space-lg));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  transition: opacity 500ms ease, transform 500ms ease, min-height 500ms ease;
+}
+
+.shellReady .terminalSplash {
+  display: none !important; /* Hide landing splash text completely when active to avoid messy overlays */
+}
+
+.introGreeting {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: fit-content;
+  padding: var(--space-xs) var(--space-sm);
+  color: #a0e0a0;
+  background: rgba(160, 224, 160, 0.08);
+  border: 1px dashed rgba(160, 224, 160, 0.25);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-shadow: 0 0 4px rgba(160, 224, 160, 0.35);
+}
+
+.greenDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #55ff55;
+  box-shadow: 0 0 8px rgba(85, 255, 85, 0.7);
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+.splashTitle {
+  margin: 0;
+  color: #f4f1f5;
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-shadow: 0 0 10px rgba(244, 241, 245, 0.12);
+}
+
+.splashTitle span {
+  display: inline-block;
+  padding: 0 var(--space-sm);
+  color: #ff9ccc;
+  background: rgba(255, 156, 204, 0.1);
+  border: 1px solid rgba(255, 156, 204, 0.22);
+  font-family: var(--font-pixel);
+  font-size: clamp(1.3rem, 3.8vw, 3.1rem);
+  line-height: 1.35;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 156, 204, 0.28);
+}
+
+.splashTitle strong {
+  color: #bda0de;
+  font-weight: 800;
+  border-bottom: 2px dashed #bda0de;
+}
+
+.splashSubtitle {
+  max-width: 720px;
+  margin: 0;
+  color: #9a9a9a;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.startConsoleButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  color: #e7dbe7;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+  animation: nudgeDown 2s ease-in-out infinite;
+}
+
+.dedicatedConsoleLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: var(--space-sm) var(--space-xl);
+  color: #a0e0a0;
+  background: rgba(160, 224, 160, 0.05);
+  border: 1px solid rgba(160, 224, 160, 0.2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition: color var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
+}
+
+.startConsoleButton:hover,
+.startConsoleButton:focus-visible,
+.dedicatedConsoleLink:hover,
+.dedicatedConsoleLink:focus-visible {
+  color: #ff9ccc;
+  background: rgba(255, 156, 204, 0.08);
+  border-color: #ff9ccc;
+  transform: translateY(-1px);
+}
+
+.shellBody {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  text-align: left; /* Ensure inputs and outputs are left-aligned */
+}
+
+.landingMode .shellBody {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(20px);
+  transition: max-height 600ms ease, opacity 500ms ease, transform 500ms ease;
+}
+
+.landingMode .shellBodyReady {
+  max-height: 1200px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landingMode .quickActions {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.landingMode.shellReady .quickActions {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes nudgeDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes outputReveal {
+  from {
+    opacity: 0.65;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminalOutput {
+  color: #a0e0a0; /* Gorgeous light green retro phosphor output */
+  padding-left: var(--space-md);
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre-wrap; /* Support multi-line outputs and wrapping on mobile */
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+  text-shadow: 0 0 3px rgba(160, 224, 160, 0.4);
+  position: relative;
+  z-index: 5;
+}
+
+.liveOutput {
+  animation: outputReveal 120ms ease-out;
+  will-change: opacity, transform;
+}
+
+.system {
+  color: #f0d98c;
+  text-shadow: 0 0 3px rgba(240, 217, 140, 0.35);
+}
+
+.error {
+  color: #ff8aa8;
+  text-shadow: 0 0 3px rgba(255, 138, 168, 0.4);
+}
+
+.terminalAscii {
+  color: #ff66cc;
+  font-size: var(--text-2xs);
+  line-height: 1.3;
+  white-space: pre;
+  margin: var(--space-sm) 0;
+  user-select: none;
+  text-shadow: 0 0 4px rgba(255, 102, 204, 0.5);
+  position: relative;
+  z-index: 5;
+}
+
+.terminalAsciiSplash {
+  color: #55ff55;
+  font-size: var(--text-2xs);
+  line-height: 1.4;
+  white-space: pre;
+  margin: var(--space-xs) 0;
+  user-select: none;
+  text-shadow: 0 0 6px rgba(85, 255, 85, 0.6);
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+
+.logEntry {
+  position: relative;
+  z-index: 5;
+}
+
+/* Input prompt line */
+.terminalForm {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2xs);
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+
+.terminalInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: #55ff55;
+  flex: 1;
+  caret-color: #55ff55; /* Retro glowing phosphor caret */
+  text-shadow: 0 0 3px rgba(85, 255, 85, 0.5);
+}
+
+.commandHint {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  min-height: 22px;
+  margin-top: var(--space-xs);
+  padding-left: var(--space-md);
+  color: #f0d98c;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  opacity: 0.86;
+  text-shadow: 0 0 3px rgba(240, 217, 140, 0.28);
+}
+
+.commandHint::before {
+  content: "hint:";
+  margin-right: var(--space-xs);
+  color: #ff66cc;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  text-transform: uppercase;
+}
+
+.quickActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: #050805;
+  border: 1px solid #142414;
+  border-top: none;
+}
+
+.quickAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 7px 10px;
+  color: #a0e0a0;
+  background: #0d160d;
+  border: 1px solid #1f3f1f;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.quickAction:hover,
+.quickAction:focus-visible {
+  color: #ff66cc;
+  border-color: #ff66cc;
+  transform: translateY(-1px);
+}
+
+.quitAction {
+  color: #ff66cc;
+  border-color: rgba(255, 102, 204, 0.65);
+}
+
+.terminalStatusBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 7px var(--space-md);
+  color: #6f996f;
+  background: #030603;
+  border: 1px solid #142414;
+  border-top: none;
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.terminalStatusBar span {
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanlineOverlay,
+  .greenDot,
+  .startConsoleButton,
+  .liveOutput,
+  .inactiveOverlay,
+  .glowGreen {
+    animation: none;
+  }
+
+  .landingMode .shellBody,
+  .terminalSplash {
+    transition: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .shellHeader {
+    font-size: 6px;
+  }
+
+  .terminalContent {
+    height: 58vh;
+    min-height: 360px;
+    font-size: var(--text-xs);
+  }
+
+  .landingMode .terminalContent {
+    height: min(76vh, 620px);
+    min-height: 520px;
+    padding: var(--space-md);
+  }
+
+  .terminalSplash {
+    min-height: calc(100% - var(--space-md));
+    padding: var(--space-xl) 0;
+  }
+
+  .shellReady .terminalSplash {
+    min-height: 220px;
+  }
+
+  .introGreeting {
+    font-size: 7px;
+  }
+
+  .splashTitle {
+    font-size: 2rem;
+  }
+
+  .splashTitle span {
+    font-size: 1.35rem;
+  }
+
+  .splashSubtitle {
+    font-size: var(--text-sm);
+  }
+
+  .startConsoleButton,
+  .dedicatedConsoleLink {
+    width: 100%;
+    max-width: 280px;
+    padding-inline: var(--space-md);
+  }
+
+  .terminalAscii {
+    font-size: 7px;
+    overflow-x: auto;
+  }
+
+  .terminalForm {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .terminalInput {
+    width: 100%;
+  }
+
+  .commandHint {
+    padding-left: 0;
+    font-size: 0.68rem;
+  }
+
+  .quickAction {
+    flex: 1 1 calc(50% - var(--space-sm));
+  }
+
+  .terminalStatusBar {
+    font-size: 5px;
+  }
+}
+
+/* Inactive Standby Overlay for Scroll Hijack Prevention */
+.inactiveOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6, 9, 6, 0.93);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+  padding: var(--space-md);
+  box-sizing: border-box;
+  animation: fadeIn 0.25s ease-out;
+  backdrop-filter: blur(2px);
+}
+
+.inactivePrompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  max-width: 320px;
+  text-align: center;
+}
+
+.glowGreen {
+  color: #55ff55;
+  font-family: var(--font-pixel);
+  font-size: var(--text-xs);
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(85, 255, 85, 0.6);
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+
+.standbyTextSmall {
+  color: #a0e0a0;
+  font-size: 8px;
+  line-height: 1.5;
+  margin: 0;
+  text-shadow: 0 0 2px rgba(160, 224, 160, 0.3);
+}
+
+.activateConsoleBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  color: var(--bg-primary);
+  background: var(--accent-pink);
+  border: 1px solid var(--accent-pink);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 0 8px var(--accent-pink-dim);
+}
+
+.inactiveOverlay:hover .activateConsoleBtn {
+  background: transparent;
+  color: var(--accent-pink);
+  box-shadow: 0 4px 10px var(--accent-pink-dim);
+  transform: translateY(-1px);
+}
+
+.deactivateHeaderBtn {
+  margin-left: auto; /* Push to the right side of the header */
+  background: transparent;
+  border: 1px solid rgba(255, 102, 204, 0.4);
+  color: #ff66cc;
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+.deactivateHeaderBtn:hover {
+  background: rgba(255, 102, 204, 0.1);
+  border-color: #ff66cc;
+  color: #ff66cc;
+  box-shadow: 0 0 6px var(--accent-pink-dim);
+}
+
+.queryingText::after {
+  content: "...";
+  display: inline-block;
+  width: 20px;
+  text-align: left;
+  animation: blinkingDots 1.5s steps(4, end) infinite;
+}
+
+@keyframes blinkingDots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+}
+
+.splashButtonsRow {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-md);
+  width: 100%;
+}
+
+.chatbotLaunchBtn {
+  color: #ff9ccc !important;
+  border-color: rgba(255, 156, 204, 0.3) !important;
+  background: rgba(255, 156, 204, 0.04) !important;
+}
+
+.chatbotLaunchBtn:hover,
+.chatbotLaunchBtn:focus-visible {
+  border-color: #ff9ccc !important;
+  background: rgba(255, 156, 204, 0.12) !important;
+}
+
+@media (max-width: 640px) {
+  .splashButtonsRow {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+  }
+}
+
+.activeAction {
+  color: #ff66cc !important;
+  border-color: #ff66cc !important;
+  background: rgba(255, 102, 204, 0.08) !important;
+  box-shadow: 0 0 6px var(--accent-pink-dim) !important;
+}
