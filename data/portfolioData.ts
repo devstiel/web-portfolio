@@ -1,386 +1,318 @@
-/* ============================
-   Portfolio Data & Types
-   ============================ */
+/** Public content sourced from data/content. Keep shared claims here. */
+export const profile = {
+  name: "Devy Relliani Saffiyah",
+  shortName: "Devy Relliani",
+  email: "devy.reliani.s@gmail.com",
+  disciplines: ["Product QA", "Business analysis", "Creative work"],
+  introduction:
+    "I’m Devy, a Computer Science graduate with a creative streak. My work takes me from testing digital products to making sense of data and bringing creative teams together.",
+  about: [
+    "“What happens if the user does this instead?” That’s the kind of question I like working through. I’m interested in how people use things, where they get stuck, and the details that make an experience feel right.",
+    "That curiosity has taken me into product QA, business analysis, and creative work. Sometimes I’m translating a requirement into test cases. Other times, I’m organising a report or helping a team turn an idea into something people can see.",
+    "I studied Computer Science at ITS. Along the way, I led creative teams, worked on robotics communications, and illustrated a holiday campaign for Team Liquid. I like having both the analytical and creative sides of my brain at the table.",
+  ],
+  resume: "/devy-relliani-saffiyah-cv.pdf",
+  socials: [
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/devy-relliani-saffiyah/",
+    },
+    { label: "Instagram", url: "https://www.instagram.com/devstiel/" },
+    { label: "TikTok", url: "https://www.tiktok.com/@devstiel_" },
+  ],
+};
 
-/* ---- Type Definitions ---- */
-
-export interface PersonalInfo {
-  name: string;
-  role: string;
-  tagline: string;
-  status: string;
-  statusType: 'available' | 'busy' | 'learning';
-  level: number;
-  xp: number;
-  maxXp: number;
-  currentMission: string;
-  currentlyLearning: string;
-}
-
-export interface Stat {
-  label: string;
-  value: string;
-  icon: string;
-}
-
-export interface AboutData {
-  bio: string[];
-  personalityTags: string[];
-  currentMission: string;
-  sideQuests: string[];
-  funFacts: string[];
-}
-
-export interface Experience {
-  id: string;
-  role: string;
+export interface Work {
+  slug: string;
+  number: string;
   company: string;
+  category: string;
+  year: string;
+  title: string;
+  summary: string;
+  role: string;
   period: string;
-  description: string;
-  achievements: string[];
+  theme: "qa" | "analytics" | "creative" | "illustration";
   tools: string[];
-  type: 'work' | 'internship' | 'organization' | 'freelance';
+  facts: { value: string; label: string }[];
+  sections: { title: string; paragraphs: string[] }[];
+  note: string;
 }
 
-export interface Skill {
-  name: string;
-  category: 'frontend' | 'backend' | 'qa' | 'tools' | 'soft';
-  level: number;
-  maxLevel: number;
-  icon: string;
-  rarity: 'common' | 'uncommon' | 'rare' | 'epic' | 'legendary';
-}
+export const works: Work[] = [
+  {
+    slug: "sampoerna-product-qa",
+    number: "01",
+    company: "Sampoerna",
+    category: "Product quality assurance",
+    year: "2026",
+    theme: "qa",
+    title: "Looking beyond the happy path.",
+    summary:
+      "Turning product requirements into test cases for AYO Kasir and MyAYO, and helping teams make informed release decisions.",
+    role: "Product Quality Assurance Intern",
+    period: "May 2026 — Present",
+    tools: ["Requirements analysis", "Test cases", "SIT", "Confluence", "n8n"],
+    facts: [
+      { value: "2", label: "Digital products" },
+      { value: "SIT", label: "Business demonstrations" },
+      { value: "n8n", label: "Automation workshop" },
+    ],
+    sections: [
+      {
+        title: "The work",
+        paragraphs: [
+          "At PT Hanjaya Mandala Sampoerna Tbk, I work on quality assurance for AYO Kasir and MyAYO, digital products used across retail and general-trade channels. My work covers new features and defect fixes through the sprint lifecycle.",
+        ],
+      },
+      {
+        title: "From requirements to release conversations",
+        paragraphs: [
+          "I translate product requirement documents from IT Product and Commercial teams into structured test cases, then execute tests during the sprint. I also authored a B2C QA testing guideline in Confluence to help standardise testing practices.",
+          "I facilitate System Integration Testing demonstrations with the Business Team and First Layer Support. These sessions bring test outcomes into the release conversation and help connect requirements with what teams need in the field.",
+        ],
+      },
+      {
+        title: "Sharing what I learn",
+        paragraphs: [
+          "Alongside delivery work, I led an n8n AI automation workshop for QA engineers. It was an opportunity to share practical automation knowledge with the wider team.",
+        ],
+      },
+    ],
+    note: "This overview describes my role and deliverables. Internal test cases, product screens, and release information are not reproduced here.",
+  },
+  {
+    slug: "pln-business-analysis",
+    number: "02",
+    company: "PLN UP3 Bekasi",
+    category: "Business analysis",
+    year: "2025",
+    theme: "analytics",
+    title: "Making the numbers easier to use.",
+    summary:
+      "Bringing EV-charging transactions and operational data together for performance reporting and business planning.",
+    role: "Business Analyst Intern",
+    period: "September — December 2025",
+    tools: [
+      "Microsoft Excel",
+      "Performance reporting",
+      "Data analysis",
+      "Strategic planning",
+    ],
+    facts: [
+      { value: "39,349", label: "Transactions in the reporting scope" },
+      { value: "27", label: "Charging units" },
+      { value: "12", label: "Locations" },
+    ],
+    sections: [
+      {
+        title: "The work",
+        paragraphs: [
+          "At PT PLN (Persero) UP3 Bekasi, I developed an executive performance-reporting suite for the EV-charging network. The reporting brought together 39,349 transactions across 27 charging units at 12 locations.",
+        ],
+      },
+      {
+        title: "Giving operational data a structure",
+        paragraphs: [
+          "I analysed customer records in Microsoft Excel to assess transformer placement and meter-reading accuracy, translating the findings into recommendations for operational planning and performance monitoring.",
+          "The EV-charging reporting covered 916,225 kWh and Rp2.26 billion in recorded revenue. These figures describe the data being analysed, rather than revenue or energy use generated by my work.",
+        ],
+      },
+      {
+        title: "Contributing to the longer view",
+        paragraphs: [
+          "I also supported the 2026–2030 strategic roadmap. My contribution was to structure revenue, network reliability, service quality, and infrastructure data into annual priorities and management targets.",
+        ],
+      },
+    ],
+    note: "The cover is a typographic summary of the reporting scope, not a screenshot of an internal PLN report.",
+  },
+  {
+    slug: "its-social-media",
+    number: "03",
+    company: "ITS Public Communication Unit",
+    category: "Creative & team leadership",
+    year: "2024–25",
+    theme: "creative",
+    title: "Many voices. A shared direction.",
+    summary:
+      "Leading a team of 21 social media specialists across five platforms, from content planning to performance reviews.",
+    role: "Lead Social Media Specialist · Contract",
+    period: "December 2024 — December 2025",
+    tools: [
+      "Content strategy",
+      "Creative direction",
+      "Google Sheets",
+      "Team coordination",
+    ],
+    facts: [
+      { value: "21", label: "Specialists on the team" },
+      { value: "5", label: "Social platforms" },
+      { value: "16.75%", label: "Year-over-year audience growth" },
+    ],
+    sections: [
+      {
+        title: "The work",
+        paragraphs: [
+          "At Unit Komunikasi Publik ITS, I led 21 social media specialists across five platforms. The role combined creative direction, day-to-day coordination, and using performance data to inform what we made next.",
+        ],
+      },
+      {
+        title: "Making room for consistent creative work",
+        paragraphs: [
+          "I developed content and campaign strategies and oversaw the production of more than 584 digital assets. I also built content planning frameworks, SOPs, and daily monitoring systems in Google Sheets.",
+          "Structured performance reports and regular coordination with internal stakeholders helped us evaluate the work and maintain consistent brand communication.",
+        ],
+      },
+      {
+        title: "What the team delivered",
+        paragraphs: [
+          "Our work contributed to 16.75% year-over-year audience growth and a combined following of more than 230,000. High-engagement initiatives reached up to 2.3 million views on a single post, with 1.1 million total TikTok likes.",
+          "These are shared team outcomes. My contribution was leading the specialists, shaping the strategy, reviewing delivery, and keeping the planning and reporting organised.",
+        ],
+      },
+    ],
+    note: "This is an overview of my leadership role. The cover is an editorial treatment; individual campaign assets are not displayed.",
+  },
+  {
+    slug: "team-liquid-holiday",
+    number: "04",
+    company: "Team Liquid",
+    category: "Commissioned illustration",
+    year: "2021",
+    theme: "illustration",
+    title: "A little holiday spirit, drawn by hand.",
+    summary:
+      "A commissioned Christmas card and wallpaper collection for Team Liquid’s League of Legends team.",
+    role: "Commissioned illustrator",
+    period: "December 2021",
+    tools: [
+      "Hand illustration",
+      "Creative concept",
+      "Digital assets",
+      "Cross-platform delivery",
+    ],
+    facts: [
+      { value: "LCS", label: "League of Legends team" },
+      { value: "2", label: "Light and night variants" },
+      { value: "3", label: "PC, mobile & social formats" },
+    ],
+    sections: [
+      {
+        title: "The commission",
+        paragraphs: [
+          "I delivered a commissioned holiday campaign for Team Liquid’s League of Legends team. The brief called for a cohesive creative concept that would connect with its gaming audience.",
+        ],
+      },
+      {
+        title: "One idea, several formats",
+        paragraphs: [
+          "I developed a hand-illustrated Christmas card and digital wallpapers for PC, mobile, and social media. Light and night variants gave the campaign a consistent visual direction across different uses.",
+          "The work involved translating stakeholder requirements into the concept, producing the illustrations, and delivering the set of assets within a short deadline.",
+        ],
+      },
+      {
+        title: "The deliverables",
+        paragraphs: [
+          "The finished commission included the Christmas card and wallpaper assets across the requested platforms. This project is one example of the illustration work that sits alongside my technical and analytical background.",
+        ],
+      },
+    ],
+    note: "The cover is a typographic introduction to the commission. The original Team Liquid campaign illustrations are not displayed here.",
+  },
+];
 
-export interface Project {
-  id: string;
-  title: string;
-  category: 'frontend' | 'backend' | 'fullstack' | 'qa' | 'mobile' | 'other';
-  description: string;
-  techStack: string[];
-  status: 'completed' | 'in-progress' | 'archived';
-  difficulty: number; // 1-5
-  links: {
-    github?: string;
-    live?: string;
-    caseStudy?: string;
-  };
-}
+export const experiences = [
+  {
+    company: "Sampoerna",
+    role: "Product Quality Assurance Intern",
+    period: "May 2026 — Present",
+    detail:
+      "Product testing, requirements analysis, and release-readiness conversations for AYO Kasir and MyAYO.",
+  },
+  {
+    company: "PLN UP3 Bekasi",
+    role: "Business Analyst Intern",
+    period: "Sep — Dec 2025",
+    detail:
+      "EV-charging performance reporting, operational data analysis, and support for the 2026–2030 strategic roadmap.",
+  },
+  {
+    company: "ITS Public Communication Unit",
+    role: "Lead Social Media Specialist · Contract",
+    period: "Dec 2024 — Dec 2025",
+    detail:
+      "Content strategy and delivery with 21 specialists across five social platforms.",
+  },
+  {
+    company: "ICHIRO ITS Robotics Team",
+    role: "Deputy Marketing Manager",
+    period: "Aug 2024 — Aug 2025",
+    detail:
+      "Led a five-member marketing team, campaign communications, and sponsor-facing content supporting relationships with 13 sponsors.",
+  },
+  {
+    company: "Ini Lho ITS!",
+    role: "Creative Lead",
+    period: "May 2023 — May 2024",
+    detail:
+      "Led a 24-member creative team, overseeing 1,396+ digital assets and a unified visual identity for student outreach.",
+  },
+];
 
-export interface SocialLink {
-  platform: string;
-  url: string;
-  handle: string;
-  icon: string;
-}
-
-export interface SiteMetadata {
-  title: string;
-  description: string;
-  url: string;
-  author: string;
-}
-
-/* ---- Placeholder Data ---- */
-
-export const siteMetadata: SiteMetadata = {
-  title: "devyrelliani.exe — Portfolio",
-  description: "Software Engineer & QA Specialist portfolio — retro-inspired, gamified, and built with Next.js.",
-  url: "https://devyrelliani.vercel.app",
-  author: "Devy Relliani",
+export const education = {
+  institution: "Institut Teknologi Sepuluh Nopember",
+  degree: "B.Sc. in Computer Science",
+  period: "2022 — 2026",
+  gpa: "3.74 / 4.00",
+  scholarships: [
+    "Beswan Djarum Scholarship · 2024/25",
+    "ITS Endowment Fund Leadership Scholarship · 2025/26",
+  ],
 };
 
-export const personalInfo: PersonalInfo = {
-  name: "Devy Relliani",
-  role: "Software Engineer & QA Specialist",
-  tagline: "Crafting quality software, one quest at a time.",
-  status: "Available for projects",
-  statusType: 'available',
-  level: 23,
-  xp: 7200,
-  maxXp: 10000,
-  currentMission: "Building scalable web applications with modern frameworks",
-  currentlyLearning: "Cloud Architecture & DevOps pipelines",
+export const capabilities = [
+  {
+    title: "Product & quality",
+    items: [
+      "Requirements gathering",
+      "Test planning & execution",
+      "User research",
+      "Agile / Scrum",
+      "Jira & Confluence",
+    ],
+  },
+  {
+    title: "Analysis & planning",
+    items: [
+      "Microsoft Excel",
+      "Performance reporting",
+      "Google Analytics 4",
+      "Product roadmapping",
+      "BPMN",
+    ],
+  },
+  {
+    title: "Creative & collaboration",
+    items: [
+      "Content strategy",
+      "Creative direction",
+      "Stakeholder communication",
+      "Team leadership",
+      "Illustration",
+    ],
+  },
+];
+
+export const certifications = [
+  "Google Analytics Certification · Google, 2026",
+  "Become a Product Manager · Udemy, 2026",
+  "Introduction to SAP S/4HANA with GBI 4.2 · SAP University Alliances, 2024",
+];
+
+export const siteMetadata = {
+  title: "Devy Relliani — Product, analysis & creative work",
+  description:
+    "The portfolio of Devy Relliani Saffiyah. Selected work in product QA at Sampoerna, business analysis at PLN, creative leadership at ITS, and illustration for Team Liquid.",
+  author: profile.name,
 };
-
-export const stats: Stat[] = [
-  { label: "Years Active", value: "3+", icon: "⏳" },
-  { label: "Projects Shipped", value: "15", icon: "📦" },
-  { label: "Tech Stack", value: "20+", icon: "🛠️" },
-  { label: "Certifications", value: "5", icon: "📜" },
-];
-
-export const aboutData: AboutData = {
-  bio: [
-    "Hello, world! I'm a passionate software engineer and QA specialist based in Jakarta, Indonesia. I love building clean, reliable, and user-friendly digital experiences.",
-    "My journey in tech started with tinkering on HTML pages as a teenager, and it evolved into a full-blown obsession with writing quality code and breaking things (professionally, of course).",
-    "When I'm not squashing bugs or shipping features, you can find me exploring pixel art, sipping matcha lattes, or leveling up my skills through online courses and side projects.",
-  ],
-  personalityTags: [
-    "☕ Coffee-powered",
-    "🧪 Quality Advocate",
-    "🎮 Casual Gamer",
-    "📚 Lifelong Learner",
-    "🌸 Aesthetic Enthusiast",
-    "🐱 Cat Person",
-    "🧩 Problem Solver",
-    "🎨 Detail-Oriented",
-  ],
-  currentMission: "Master cloud-native development and contribute to open-source testing tools.",
-  sideQuests: [
-    "☐ Build a personal CLI tool",
-    "☑ Complete AWS Cloud Practitioner cert",
-    "☐ Contribute to an open-source project",
-    "☐ Learn Rust fundamentals",
-    "☑ Redesign portfolio website (this one!)",
-  ],
-  funFacts: [
-    "I've written more test cases than lines of production code",
-    "My first 'website' was a Neopets fan page",
-    "I can type at 95 WPM on a mechanical keyboard",
-    "I name all my projects after space missions",
-    "I once debugged a production issue at 3 AM in pajamas",
-  ],
-};
-
-export const experiences: Experience[] = [
-  {
-    id: "exp-1",
-    role: "Software Engineer",
-    company: "NovaTech Solutions",
-    period: "Jan 2024 — Present",
-    description: "Full-stack development for enterprise SaaS products, focusing on performance optimization and CI/CD pipeline improvements.",
-    achievements: [
-      "Reduced page load time by 40% through code splitting and lazy loading",
-      "Implemented automated E2E testing pipeline, catching 30% more bugs pre-release",
-      "Led migration from legacy REST APIs to GraphQL, improving data fetch efficiency",
-    ],
-    tools: ["React", "TypeScript", "Node.js", "PostgreSQL", "Docker", "Jest"],
-    type: "work",
-  },
-  {
-    id: "exp-2",
-    role: "QA Engineer Intern",
-    company: "PixelForge Studio",
-    period: "Jun 2023 — Dec 2023",
-    description: "Quality assurance and test automation for a mobile gaming platform with 500K+ monthly active users.",
-    achievements: [
-      "Designed and executed 200+ test cases across 3 product releases",
-      "Built Selenium-based regression test suite, reducing manual QA time by 60%",
-      "Identified critical payment flow bug that prevented $50K in potential revenue loss",
-    ],
-    tools: ["Selenium", "Cypress", "Jira", "Python", "Postman", "TestRail"],
-    type: "internship",
-  },
-  {
-    id: "exp-3",
-    role: "Frontend Developer",
-    company: "Freelance / Contract",
-    period: "Mar 2022 — May 2023",
-    description: "Designed and developed responsive websites and web applications for small businesses and startups.",
-    achievements: [
-      "Delivered 8 client projects on time with 100% satisfaction rate",
-      "Built reusable component library used across multiple client projects",
-      "Achieved 95+ Lighthouse performance scores on all delivered sites",
-    ],
-    tools: ["Next.js", "Vue.js", "Figma", "SCSS", "Firebase", "Vercel"],
-    type: "freelance",
-  },
-  {
-    id: "exp-4",
-    role: "Tech Lead",
-    company: "University Dev Club",
-    period: "Aug 2021 — Feb 2022",
-    description: "Led a team of 12 student developers to build internal university tools and organize tech workshops.",
-    achievements: [
-      "Organized 6 workshops on web development fundamentals (100+ attendees)",
-      "Shipped university event management platform used by 2000+ students",
-      "Mentored 5 junior members who went on to land tech internships",
-    ],
-    tools: ["React", "Express", "MongoDB", "Git", "Notion", "Discord"],
-    type: "organization",
-  },
-];
-
-export const skills: Skill[] = [
-  // Frontend
-  { name: "React", category: "frontend", level: 9, maxLevel: 10, icon: "⚛️", rarity: "epic" },
-  { name: "Next.js", category: "frontend", level: 8, maxLevel: 10, icon: "▲", rarity: "epic" },
-  { name: "TypeScript", category: "frontend", level: 8, maxLevel: 10, icon: "📘", rarity: "rare" },
-  { name: "HTML/CSS", category: "frontend", level: 9, maxLevel: 10, icon: "🎨", rarity: "rare" },
-  { name: "Vue.js", category: "frontend", level: 6, maxLevel: 10, icon: "💚", rarity: "uncommon" },
-  { name: "Tailwind CSS", category: "frontend", level: 7, maxLevel: 10, icon: "🌊", rarity: "uncommon" },
-
-  // Backend
-  { name: "Node.js", category: "backend", level: 7, maxLevel: 10, icon: "🟢", rarity: "rare" },
-  { name: "Express", category: "backend", level: 7, maxLevel: 10, icon: "🚂", rarity: "uncommon" },
-  { name: "PostgreSQL", category: "backend", level: 6, maxLevel: 10, icon: "🐘", rarity: "uncommon" },
-  { name: "MongoDB", category: "backend", level: 6, maxLevel: 10, icon: "🍃", rarity: "uncommon" },
-  { name: "Python", category: "backend", level: 5, maxLevel: 10, icon: "🐍", rarity: "common" },
-  { name: "REST APIs", category: "backend", level: 8, maxLevel: 10, icon: "🔗", rarity: "rare" },
-
-  // QA / Testing
-  { name: "Cypress", category: "qa", level: 8, maxLevel: 10, icon: "🧪", rarity: "epic" },
-  { name: "Jest", category: "qa", level: 8, maxLevel: 10, icon: "🃏", rarity: "rare" },
-  { name: "Selenium", category: "qa", level: 7, maxLevel: 10, icon: "🌐", rarity: "rare" },
-  { name: "Postman", category: "qa", level: 7, maxLevel: 10, icon: "📬", rarity: "uncommon" },
-  { name: "Test Planning", category: "qa", level: 8, maxLevel: 10, icon: "📋", rarity: "rare" },
-  { name: "Bug Tracking", category: "qa", level: 9, maxLevel: 10, icon: "🐛", rarity: "epic" },
-
-  // Tools
-  { name: "Git", category: "tools", level: 9, maxLevel: 10, icon: "📂", rarity: "rare" },
-  { name: "Docker", category: "tools", level: 5, maxLevel: 10, icon: "🐳", rarity: "uncommon" },
-  { name: "VS Code", category: "tools", level: 9, maxLevel: 10, icon: "💻", rarity: "common" },
-  { name: "Figma", category: "tools", level: 6, maxLevel: 10, icon: "🎯", rarity: "uncommon" },
-  { name: "Jira", category: "tools", level: 7, maxLevel: 10, icon: "📊", rarity: "uncommon" },
-  { name: "Vercel", category: "tools", level: 7, maxLevel: 10, icon: "▲", rarity: "uncommon" },
-
-  // Soft Skills
-  { name: "Communication", category: "soft", level: 8, maxLevel: 10, icon: "💬", rarity: "rare" },
-  { name: "Teamwork", category: "soft", level: 9, maxLevel: 10, icon: "🤝", rarity: "epic" },
-  { name: "Problem Solving", category: "soft", level: 8, maxLevel: 10, icon: "🧩", rarity: "rare" },
-  { name: "Time Management", category: "soft", level: 7, maxLevel: 10, icon: "⏰", rarity: "uncommon" },
-  { name: "Adaptability", category: "soft", level: 8, maxLevel: 10, icon: "🔄", rarity: "rare" },
-  { name: "Leadership", category: "soft", level: 7, maxLevel: 10, icon: "👑", rarity: "rare" },
-];
-
-export const projects: Project[] = [
-  {
-    id: "proj-1",
-    title: "Project Aurora",
-    category: "fullstack",
-    description: "A full-stack task management platform with real-time collaboration, built for remote teams. Features Kanban boards, time tracking, and team analytics.",
-    techStack: ["Next.js", "TypeScript", "PostgreSQL", "Socket.io", "Docker"],
-    status: "completed",
-    difficulty: 4,
-    links: {
-      github: "https://github.com/username/aurora",
-      live: "https://aurora-app.vercel.app",
-    },
-  },
-  {
-    id: "proj-2",
-    title: "BugHunter CLI",
-    category: "qa",
-    description: "A command-line tool for automated API testing and bug reporting. Generates structured test reports and integrates with Jira for ticket creation.",
-    techStack: ["Node.js", "TypeScript", "Commander.js", "Axios", "Jest"],
-    status: "completed",
-    difficulty: 3,
-    links: {
-      github: "https://github.com/username/bughunter",
-    },
-  },
-  {
-    id: "proj-3",
-    title: "PixelFolio",
-    category: "frontend",
-    description: "This very portfolio website! A gamified, retro-inspired personal portfolio built with Next.js and CSS Modules. No UI libraries used.",
-    techStack: ["Next.js", "React", "TypeScript", "CSS Modules"],
-    status: "completed",
-    difficulty: 3,
-    links: {
-      github: "https://github.com/username/pixelfolio",
-      live: "https://devyrelliani.vercel.app",
-    },
-  },
-  {
-    id: "proj-4",
-    title: "ShopStream",
-    category: "fullstack",
-    description: "An e-commerce platform with real-time inventory management, payment processing, and admin dashboard. Built for a local retail client.",
-    techStack: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
-    status: "completed",
-    difficulty: 5,
-    links: {
-      github: "https://github.com/username/shopstream",
-      live: "https://shopstream-demo.vercel.app",
-      caseStudy: "#",
-    },
-  },
-  {
-    id: "proj-5",
-    title: "TestForge",
-    category: "qa",
-    description: "An automated testing framework that generates test cases from API specifications. Supports OpenAPI/Swagger and outputs Cypress/Jest test files.",
-    techStack: ["Python", "FastAPI", "Jinja2", "Docker"],
-    status: "in-progress",
-    difficulty: 4,
-    links: {
-      github: "https://github.com/username/testforge",
-    },
-  },
-  {
-    id: "proj-6",
-    title: "WeatherQuest",
-    category: "frontend",
-    description: "A gamified weather app that turns daily forecasts into adventure quests. Features animated weather icons and location-based recommendations.",
-    techStack: ["Vue.js", "OpenWeatherMap API", "SCSS", "PWA"],
-    status: "completed",
-    difficulty: 2,
-    links: {
-      github: "https://github.com/username/weatherquest",
-      live: "https://weatherquest.vercel.app",
-    },
-  },
-  {
-    id: "proj-7",
-    title: "Campus Connect",
-    category: "fullstack",
-    description: "A university event management platform with RSVPs, notifications, and event analytics. Used by 2000+ students across campus.",
-    techStack: ["React", "Express", "MongoDB", "Socket.io", "Firebase"],
-    status: "archived",
-    difficulty: 3,
-    links: {
-      github: "https://github.com/username/campus-connect",
-    },
-  },
-  {
-    id: "proj-8",
-    title: "MobileTest Suite",
-    category: "mobile",
-    description: "A cross-platform mobile testing toolkit with device simulation, gesture recording, and accessibility auditing.",
-    techStack: ["React Native", "Appium", "TypeScript", "Detox"],
-    status: "in-progress",
-    difficulty: 4,
-    links: {
-      github: "https://github.com/username/mobile-test-suite",
-    },
-  },
-];
-
-export const socialLinks: SocialLink[] = [
-  { platform: "GitHub", url: "https://github.com/username", handle: "@username", icon: "⌂" },
-  { platform: "LinkedIn", url: "https://linkedin.com/in/username", handle: "/in/username", icon: "▦" },
-  { platform: "Instagram", url: "https://instagram.com/username", handle: "@username", icon: "◈" },
-  { platform: "Email", url: "mailto:hello@example.com", handle: "hello@example.com", icon: "✉" },
-  { platform: "Behance", url: "https://behance.net/username", handle: "/username", icon: "◆" },
-  { platform: "Twitter/X", url: "https://x.com/username", handle: "@username", icon: "✧" },
-];
-
-export const navItems = [
-  { label: "Dashboard", href: "#dashboard", icon: "◉" },
-  { label: "About", href: "#about", icon: "◫" },
-  { label: "Experience", href: "#experience", icon: "◧" },
-  { label: "Skills", href: "#skills", icon: "◈" },
-  { label: "Projects", href: "#projects", icon: "◩" },
-  { label: "Contact", href: "#contact", icon: "✉" },
-];
-
-/* Skill category metadata for the inventory tabs */
-export const skillCategories = [
-  { key: "frontend", label: "Frontend", icon: "🖥️" },
-  { key: "backend", label: "Backend", icon: "⚙️" },
-  { key: "qa", label: "QA / Testing", icon: "🧪" },
-  { key: "tools", label: "Tools", icon: "🔧" },
-  { key: "soft", label: "Soft Skills", icon: "💡" },
-] as const;
-
-/* Project category metadata for filtering */
-export const projectCategories = [
-  { key: "all", label: "All" },
-  { key: "frontend", label: "Frontend" },
-  { key: "backend", label: "Backend" },
-  { key: "fullstack", label: "Fullstack" },
-  { key: "qa", label: "QA" },
-  { key: "mobile", label: "Mobile" },
-  { key: "other", label: "Other" },
-] as const;

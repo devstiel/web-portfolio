@@ -1,0 +1,3 @@
+- https://github.com/oluwadareseyi/folio-v2
+- https://www.nexusmag.eu/
+- 

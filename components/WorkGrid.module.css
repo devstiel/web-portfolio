@@ -1,0 +1,156 @@
+.filterRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 32px;
+  gap: 20px;
+}
+.filters {
+  display: flex;
+  gap: 30px;
+}
+.filters button {
+  border: 0;
+  border-bottom: 2px solid transparent;
+  padding: 13px 0;
+  margin-bottom: -1px;
+  font-size: 12px;
+  color: var(--muted);
+  background: none;
+  min-height: 48px;
+}
+.filters button.active {
+  border-color: var(--ink);
+  color: var(--ink);
+  font-weight: 600;
+}
+.filters button:hover {
+  color: var(--ink);
+}
+.filters sup {
+  font-size: 8px;
+  margin-left: 8px;
+}
+.indexLabel {
+  font-size: 9px;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 60px 65px;
+  align-items: start;
+}
+.card:nth-child(even) {
+  margin-top: 115px;
+}
+.link {
+  display: block;
+}
+.visual {
+  position: relative;
+}
+.openArrow {
+  position: absolute;
+  right: 17px;
+  bottom: 52px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 23px;
+  color: var(--ink);
+  background: var(--paper);
+  border-radius: 50%;
+  transition:
+    transform 220ms ease,
+    background 220ms ease;
+}
+.link:hover .openArrow {
+  transform: rotate(45deg);
+  background: var(--acid);
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 9px;
+  color: var(--muted);
+  margin: 22px 0 10px;
+}
+.card h3 {
+  font-size: clamp(21px, 2.2vw, 31px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+.card p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-top: 12px;
+  max-width: 445px;
+}
+.read {
+  display: inline-flex;
+  align-items: center;
+  gap: 17px;
+  min-height: 44px;
+  font-size: 11px;
+  margin-top: 7px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: var(--line);
+}
+.link:hover .read {
+  text-decoration-color: var(--ink);
+}
+@media (max-width: 1100px) {
+  .grid {
+    gap: 50px 35px;
+  }
+  .card:nth-child(even) {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .card:nth-child(even) {
+    margin-top: 0;
+  }
+  .card h3 {
+    font-size: 26px;
+  }
+  .card p {
+    max-width: none;
+    font-size: 14px;
+  }
+  .indexLabel {
+    display: none;
+  }
+  .filters {
+    gap: 25px;
+  }
+  .filterRow {
+    margin-bottom: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .filters {
+    gap: 20px;
+  }
+  .filters button {
+    font-size: 11px;
+  }
+  .filters sup {
+    margin-left: 4px;
+  }
+}

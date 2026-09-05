@@ -1,84 +1,63 @@
-import type { Metadata } from 'next';
-import Script from 'next/script';
-import { Press_Start_2P, JetBrains_Mono } from 'next/font/google';
-import './globals.css';
-import { siteMetadata } from '@/data/portfolioData';
-import { ToastProvider } from '@/components/Toast/ToastProvider';
+import type { Metadata } from "next";
+import { Barlow_Condensed, DM_Sans, Instrument_Serif } from "next/font/google";
+import { siteMetadata } from "@/data/portfolioData";
+import "./globals.css";
 
-const pixelFont = Press_Start_2P({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-pixel',
-  display: 'swap',
+const display = Barlow_Condensed({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
 });
-
-const monoFont = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-mono',
-  display: 'swap',
+const body = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+const serif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: siteMetadata.title,
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000"),
+  ),
+  title: { default: siteMetadata.title, template: "%s — Devy Relliani" },
   description: siteMetadata.description,
   authors: [{ name: siteMetadata.author }],
   openGraph: {
     title: siteMetadata.title,
     description: siteMetadata.description,
-    url: siteMetadata.url,
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteMetadata.title,
     description: siteMetadata.description,
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
-
-/* Inline script to prevent flash of wrong theme on load.
-   Reads localStorage → prefers-color-scheme → defaults to dark. */
-const themeInitScript = `
-  (function() {
-    try {
-      var saved = localStorage.getItem('portfolio-theme');
-      if (saved === 'light' || saved === 'dark') {
-        document.documentElement.setAttribute('data-theme', saved);
-        return;
-      }
-    } catch(e) {}
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
-  })();
-`;
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${pixelFont.variable} ${monoFont.variable}`}
-      data-scroll-behavior="smooth"
-      suppressHydrationWarning
+      className={`${display.variable} ${body.variable} ${serif.variable}`}
     >
-      <head>
-        <Script
-          id="theme-init"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{ __html: themeInitScript }}
-        />
-      </head>
       <body>
-        <ToastProvider>
-          {children}
-        </ToastProvider>
+        <a className="skip-link" href="#main">
+          Skip to content
+        </a>
+        {children}
       </body>
     </html>
   );

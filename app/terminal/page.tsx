@@ -1,30 +1,40 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
-import RetroTerminal from '@/components/RetroTerminal/RetroTerminal';
-import styles from './terminal.module.css';
+import type { Metadata } from "next";
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import PortfolioTerminal from "@/components/PortfolioTerminal";
+import styles from "./terminal.module.css";
 
 export const metadata: Metadata = {
-  title: 'Terminal | Devy Relliani',
-  description: 'Dedicated interactive portfolio CLI terminal.',
+  title: "A little experiment",
+  description:
+    "Explore Devy’s work and experience through a small keyboard-friendly portfolio index.",
 };
 
 export default function TerminalPage() {
   return (
     <>
-      <Navbar />
-      <main className={styles.main}>
-        <div className={styles.sessionBar}>
-          <span>[ ENDPOINT: /terminal ]</span>
-          <Link href="/#dashboard" className={styles.backLink}>
-            Back to dashboard
-          </Link>
+      <SiteHeader />
+      <main id="main" className={`shell ${styles.main}`}>
+        <Link href="/" className="text-link">
+          ← Back to the portfolio
+        </Link>
+        <div className={styles.intro}>
+          <p className="eyebrow">A little experiment / 01</p>
+          <h1>
+            For the
+            <br />
+            <em>keyboard inclined.</em>
+          </h1>
+          <p>
+            A small alternate way to explore my portfolio.
+            <br />
+            Same person. Same work. A few more keystrokes.
+          </p>
         </div>
-
-        <RetroTerminal standalone className={styles.terminal} />
+        <PortfolioTerminal />
       </main>
-      <Footer />
+      <SiteFooter />
     </>
   );
 }

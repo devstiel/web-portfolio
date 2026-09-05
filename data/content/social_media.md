@@ -1,0 +1,4 @@
+- https://www.linkedin.com/in/devy-relliani-saffiyah/
+- https://www.instagram.com/devstiel/
+- https://www.tiktok.com/@devstiel_
+- email = devy.reliani.s@gmail.com

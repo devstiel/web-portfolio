@@ -1,0 +1,129 @@
+.terminal {
+  border: 1px solid var(--ink);
+  background: #292c25;
+  color: #e8ecdf;
+  font-family: "Courier New", monospace;
+}
+.terminal :focus-visible {
+  outline-color: var(--acid);
+  outline-offset: 3px;
+}
+.titleBar {
+  background: #35392e;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #c5cdb8;
+  font-size: 11px;
+  border-bottom: 1px solid #525849;
+}
+.log {
+  height: 370px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 28px;
+  scrollbar-color: #929b7e #292c25;
+}
+.welcome {
+  color: var(--acid);
+  font-size: 15px;
+  line-height: 1.9;
+}
+.welcome > span {
+  color: #c5cdb8;
+  font-size: 12px;
+}
+.entry {
+  padding-top: 22px;
+}
+.command {
+  color: var(--acid);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  margin-bottom: 10px;
+}
+.entry pre {
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.entry a {
+  color: var(--acid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form {
+  border-top: 1px solid #525849;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 24px;
+}
+.form label {
+  color: var(--acid);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.form input {
+  background: none;
+  border: 0;
+  color: var(--paper);
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  font-size: 14px;
+}
+.form input::placeholder {
+  color: #aeb5a1;
+}
+.form button {
+  color: var(--ink);
+  background: var(--acid);
+  border: 0;
+  min-width: 44px;
+  height: 44px;
+  font-size: 22px;
+}
+.shortcuts {
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  background: #35392e;
+  border-top: 1px solid #525849;
+}
+.shortcuts button {
+  background: none;
+  border: 0;
+  color: #d2d9c6;
+  min-height: 36px;
+  font-size: 11px;
+  padding: 4px;
+}
+.shortcuts button:hover {
+  color: var(--acid);
+  text-decoration: underline;
+}
+@media (max-width: 540px) {
+  .log {
+    padding: 20px;
+    height: 340px;
+  }
+  .form {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+  .form label {
+    font-size: 11px;
+  }
+  .titleBar {
+    padding-inline: 18px;
+    font-size: 9px;
+  }
+  .entry pre {
+    font-size: 12px;
+  }
+}

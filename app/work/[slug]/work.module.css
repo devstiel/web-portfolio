@@ -1,0 +1,235 @@
+.main {
+  padding-top: 30px;
+}
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  min-height: 44px;
+}
+.back:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.heading {
+  padding: 50px 0 45px;
+}
+.heading > p:first-child {
+  color: var(--muted);
+}
+.heading h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(60px, 7.5vw, 110px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  max-width: 1000px;
+  margin-top: 24px;
+}
+.summary {
+  max-width: 640px;
+  font-size: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 28px;
+}
+.metadata {
+  display: grid;
+  grid-template-columns: 1.1fr 0.8fr 1.2fr;
+  gap: 45px;
+  padding: 25px 0 35px;
+  border-top: 1px solid var(--line);
+}
+.metadata dt {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.metadata dd {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.coverCaption {
+  font-size: 10px;
+  color: var(--muted);
+  text-align: right;
+  margin-top: 12px;
+}
+.story {
+  margin-top: 65px;
+}
+.storySection {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  padding-block: 36px;
+  border-top: 1px solid var(--line);
+}
+.storyLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+}
+.storyLabel > span {
+  color: var(--muted);
+}
+.storyLabel h2 {
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+  max-width: 260px;
+}
+.paragraphs p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.85;
+}
+.paragraphs p:last-child {
+  margin-bottom: 0;
+}
+.facts {
+  border-block: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 45px 0;
+  margin-top: 35px;
+}
+.facts > div {
+  display: flex;
+  flex-direction: column;
+}
+.facts dd {
+  order: -1;
+  font-family: var(--font-display);
+  font-size: 76px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.facts dt {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.note {
+  max-width: 680px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 25px;
+}
+.next {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  padding-block: 60px;
+  margin-top: 45px;
+  border-top: 1px solid var(--line);
+}
+.next h2 {
+  font-size: clamp(27px, 3vw, 42px);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 17px;
+}
+.next > span {
+  display: grid;
+  place-content: center;
+  flex-shrink: 0;
+  font-size: 32px;
+  width: 68px;
+  height: 68px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  transition:
+    background 200ms ease,
+    transform 200ms ease;
+}
+.next:hover > span {
+  background: var(--acid);
+  transform: rotate(45deg);
+}
+@media (max-width: 760px) {
+  .storySection {
+    gap: 35px;
+    grid-template-columns: 1fr 1.6fr;
+  }
+  .storyLabel {
+    gap: 15px;
+  }
+  .metadata {
+    gap: 25px;
+  }
+  .facts dd {
+    font-size: 60px;
+  }
+}
+@media (max-width: 540px) {
+  .main {
+    padding-top: 18px;
+  }
+  .heading {
+    padding-block: 30px;
+  }
+  .heading h1 {
+    font-size: 60px;
+  }
+  .summary {
+    font-size: 16px;
+  }
+  .metadata {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+  .metadata > div:last-child {
+    grid-column: 1 / -1;
+  }
+  .story {
+    margin-top: 35px;
+  }
+  .storySection {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-block: 28px;
+  }
+  .storyLabel h2 {
+    max-width: none;
+    font-size: 24px;
+  }
+  .paragraphs p {
+    font-size: 15px;
+  }
+  .facts {
+    gap: 17px;
+    padding-block: 28px;
+    margin-top: 10px;
+  }
+  .facts dd {
+    font-size: 44px;
+  }
+  .facts dt {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+  .next {
+    margin-top: 35px;
+    padding-block: 40px;
+    gap: 20px;
+  }
+  .next > span {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+  .next :global(.eyebrow) {
+    font-size: 9px;
+  }
+}

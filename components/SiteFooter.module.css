@@ -1,0 +1,165 @@
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding-top: 60px;
+}
+.footer :focus-visible {
+  outline-color: var(--acid);
+}
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.heading > svg {
+  width: 36px;
+  height: 36px;
+  color: var(--acid);
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 35px 0 70px;
+  align-items: end;
+}
+.contactGrid h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(100px, 11vw, 168px);
+  line-height: 0.8;
+  letter-spacing: -0.02em;
+}
+.contactGrid h2 em {
+  font-style: normal;
+  color: var(--acid);
+}
+.contactCopy > p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #c2c5b8;
+  margin-bottom: 22px;
+}
+.email {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  border-bottom: 1px solid #7c8170;
+  padding-bottom: 8px;
+  font-size: clamp(17px, 1.7vw, 25px);
+  letter-spacing: -0.035em;
+}
+.email:hover {
+  color: var(--acid);
+}
+.copyRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 18px;
+  min-height: 45px;
+  align-items: center;
+  margin-top: 6px;
+}
+.copyButton {
+  border: 0;
+  background: none;
+  color: #c2c5b8;
+  padding-block: 10px;
+  min-height: 44px;
+  font-size: 11px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.copyButton:hover {
+  color: var(--acid);
+}
+.copyStatus {
+  font-size: 11px;
+  color: var(--acid);
+}
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-top: 20px;
+}
+.socials a {
+  font-size: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-height: 44px;
+}
+.socials a:hover {
+  color: var(--acid);
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  border-top: 1px solid #505447;
+  min-height: 85px;
+  font-size: 10px;
+  color: #bec1b4;
+}
+.bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 15px;
+}
+.bottom a:hover {
+  color: var(--acid);
+}
+@media (max-width: 900px) {
+  .contactGrid {
+    gap: 30px;
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .email {
+    gap: 15px;
+    font-size: 18px;
+  }
+}
+@media (max-width: 650px) {
+  .footer {
+    padding-top: 40px;
+  }
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 35px;
+  }
+  .contactGrid h2 {
+    font-size: 120px;
+  }
+  .contactCopy > p {
+    font-size: 15px;
+  }
+  .email {
+    font-size: 20px;
+  }
+  .bottom {
+    flex-wrap: wrap;
+    padding-block: 18px;
+    gap: 0 20px;
+  }
+  .bottom > span {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+  .bottom > a:last-child {
+    margin-left: auto;
+  }
+}
+@media (max-width: 360px) {
+  .email {
+    font-size: 17px;
+  }
+  .socials {
+    gap: 20px;
+  }
+}
