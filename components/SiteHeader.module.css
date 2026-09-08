@@ -80,8 +80,9 @@
   font-size: 12px;
   min-height: 42px;
 }
-.resume:hover {
-  background: var(--acid);
+.resume:is(:hover, :focus-visible) {
+  color: var(--paper);
+  background: var(--accent);
 }
 .menuButton {
   display: none;

@@ -16,7 +16,7 @@
   left: 30%;
   width: 43%;
   height: 12px;
-  background: #677c2d;
+  background: var(--accent-edge);
   opacity: 0.17;
   filter: blur(8px);
   border-radius: 50%;
@@ -27,9 +27,9 @@
   height: 67%;
   left: 16.5%;
   top: 16.5%;
-  color: var(--acid);
+  color: var(--accent);
   transform: rotate(-12deg);
-  filter: drop-shadow(4px 5px 0 #677c2d);
+  filter: drop-shadow(4px 5px 0 var(--accent-edge));
   transition: opacity 240ms ease;
 }
 .canvas {

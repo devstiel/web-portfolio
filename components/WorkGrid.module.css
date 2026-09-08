@@ -74,8 +74,9 @@
     background 220ms ease;
 }
 .link:is(:hover, :focus-visible) .openArrow {
+  color: var(--paper);
   transform: rotate(45deg);
-  background: var(--acid);
+  background: var(--accent);
 }
 .meta {
   display: flex;

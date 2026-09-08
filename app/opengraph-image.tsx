@@ -14,8 +14,8 @@ export default function Image() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          background: "#f4f2e9",
-          color: "#252720",
+          background: "#f5efe7",
+          color: "#292225",
           padding: "55px 65px",
           fontFamily: "sans-serif",
         }}
@@ -25,7 +25,7 @@ export default function Image() {
             display: "flex",
             justifyContent: "space-between",
             fontSize: 19,
-            borderBottom: "1px solid #b8baac",
+            borderBottom: "1px solid #ccbdbb",
             paddingBottom: 23,
           }}
         >
@@ -58,7 +58,8 @@ export default function Image() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "#d9f76b",
+              background: "#7b3048",
+              color: "#f5efe7",
               width: 165,
               height: 165,
               fontSize: 120,
@@ -70,7 +71,7 @@ export default function Image() {
         <div
           style={{
             display: "flex",
-            borderTop: "1px solid #b8baac",
+            borderTop: "1px solid #ccbdbb",
             paddingTop: 23,
             fontSize: 23,
           }}

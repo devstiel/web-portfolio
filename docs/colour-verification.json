@@ -1,0 +1,251 @@
+{
+  "date": "2026-09-08",
+  "lint": "passed",
+  "productionBuild": "passed",
+  "browserFlows": {
+    "checks": [
+      "Homepage and four project cards",
+      "All three work filters show the correct projects",
+      "Experience expands and collapses with keyboard",
+      "CV download is byte-identical to supplied PDF",
+      "Copy email writes the correct address",
+      "Contact links match supplied sources",
+      "No document overflow at six widths, 320\u00e2\u20ac\u201c1440px",
+      "Mobile menu navigation and Escape focus return",
+      "All four work pages load and fit phone/tablet/desktop",
+      "Project entry and return navigation",
+      "Unknown project returns a real 404",
+      "Terminal source content, command history and clear",
+      "Terminal CV link",
+      "Local API source accuracy and invalid-input responses",
+      "Social preview returns a PNG",
+      "Core content and CV remain available without JavaScript",
+      "Clipboard failure offers a usable fallback"
+    ],
+    "errors": [],
+    "a11y": [
+      {
+        "page": "home-desktop",
+        "violations": []
+      },
+      {
+        "page": "home-mobile",
+        "violations": []
+      },
+      {
+        "page": "sampoerna-product-qa",
+        "violations": []
+      },
+      {
+        "page": "pln-business-analysis",
+        "violations": []
+      },
+      {
+        "page": "its-social-media",
+        "violations": []
+      },
+      {
+        "page": "team-liquid-holiday",
+        "violations": []
+      },
+      {
+        "page": "terminal",
+        "violations": []
+      }
+    ]
+  },
+  "reveals": {
+    "checks": [
+      "Heading lines reveal separately with a 100ms stagger",
+      "Project artwork wipes in before its captions and does not replay",
+      "Circle entrances preserve the interactive work explorer",
+      "Timeline dividers draw in and keyboard disclosures still expand",
+      "Footer participates in the same two-line reveal sequence",
+      "Keyboard focus immediately settles an unfinished project wipe",
+      "Rapid filtering settles all child reveals without hidden cards",
+      "Reduced-motion changes settle all active entrances",
+      "Homepage fits six widths from 320 to 1440px",
+      "Both original-image galleries load, fit three widths, and link to full images",
+      "Without JavaScript, headings, all projects, and gallery links remain available"
+    ],
+    "errors": [],
+    "a11y": [
+      {
+        "slug": "pln-business-analysis",
+        "violations": []
+      },
+      {
+        "slug": "its-social-media",
+        "violations": []
+      }
+    ]
+  },
+  "sculpture": {
+    "checks": [
+      "Three.js renders the star with an available graphics backend",
+      "Pointer movement changes the rendered sculpture and leaving settles it",
+      "Enter and Space turn the sculpture through a native button",
+      "GPU draw calls stop when settled or offscreen and resume on return",
+      "The visibility-change handler pauses rendering in a hidden document",
+      "The sculpture fits six viewport widths with capped drawing resolution",
+      "Changing motion preference disposes graphics and restores one scene when re-enabled",
+      "Navigating away disposes the scene and returning creates one replacement",
+      "A real WebGL context loss restores the static star",
+      "Reduced motion on initial load skips the Three.js engine download",
+      "Unavailable graphics leave the static identity and portfolio content intact",
+      "Touch activates a 3D turn while preserving vertical scrolling",
+      "Motion changes during a delayed engine download leave one working scene",
+      "Without JavaScript the static star and all four work cards remain visible"
+    ],
+    "errors": [],
+    "backend": "webgl2",
+    "a11y": []
+  },
+  "additionalEngines": [
+    {
+      "browser": "firefox",
+      "version": "148.0.2",
+      "checks": [
+        "Masked heading reveals settle visibly",
+        "Work filters settle to the selected projects",
+        "Keyboard work explorer and inactive links",
+        "Keyboard experience open and close",
+        "Reduced motion settles active animations",
+        "Mobile menu navigation and layout",
+        "Original image gallery loads on mobile",
+        "Work page automated accessibility scan"
+      ],
+      "errors": [],
+      "violations": []
+    },
+    {
+      "browser": "webkit",
+      "version": "26.4",
+      "checks": [
+        "Masked heading reveals settle visibly",
+        "Work filters settle to the selected projects",
+        "Keyboard work explorer and inactive links",
+        "Keyboard experience open and close",
+        "Reduced motion settles active animations",
+        "Mobile menu navigation and layout",
+        "Original image gallery loads on mobile",
+        "Work page automated accessibility scan"
+      ],
+      "errors": [],
+      "violations": []
+    }
+  ],
+  "palette": {
+    "date": "2026-09-08",
+    "contrast": [
+      {
+        "name": "Body text on parchment",
+        "colors": [
+          "rgb(41, 34, 37)",
+          "rgb(245, 239, 231)"
+        ],
+        "ratio": 13.62,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selection text",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Focused skip link",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "CV hover",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "CV keyboard focus",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selected work explorer",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selected explorer focus ring",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 3
+      },
+      {
+        "name": "Expanded experience icon",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Hovered project arrow",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Rose accent on dark footer",
+        "colors": {
+          "bg": "rgb(41, 34, 37)",
+          "fg": "rgb(232, 182, 196)"
+        },
+        "ratio": 8.83,
+        "threshold": 4.5
+      },
+      {
+        "name": "Focused next project arrow",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Terminal submit button",
+        "colors": [
+          "rgb(41, 34, 37)",
+          "rgb(232, 182, 196)"
+        ],
+        "ratio": 8.83,
+        "threshold": 4.5
+      }
+    ]
+  }
+}

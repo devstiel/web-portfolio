@@ -61,7 +61,7 @@ Sampoerna and Team Liquid retain typographic introductions because their origina
 
 ## Design and structure
 
-- `app/globals.css`: paper/ink/lime colours, shared layout, focus and reduced-motion defaults.
+- `app/globals.css`: parchment, warm ink, and burgundy colour tokens, shared layout, focus and reduced-motion defaults.
 - `app/page.tsx` and `app/page.module.css`: homepage composition.
 - `components/WorkGrid.tsx`: client-side work filters and navigable project cards.
 - `components/StarSculpture.tsx`, `components/star-scene.ts`: deferred Three.js hero sculpture and its graphics lifecycle. `data/starShape.ts` shares the outline with the flat star.
@@ -79,9 +79,13 @@ The subsequent [award-reference review and refinements](docs/portfolio-polish.md
 
 The [motion and interactivity pass](docs/portfolio-motion.md) adds a staggered hero entrance, one-time scroll reveals, animated work filtering, an interactive Logic / Imagination work explorer, and smooth experience disclosures. It uses CSS and browser animation APIs with no new dependencies. Motion respects preference changes, and the underlying content and native disclosures work without JavaScript.
 
-The subsequent [3D hero enhancement](docs/portfolio-3d.md) gives the existing lime star depth, pointer tilt, and a turn on click, tap, Enter, or Space. Three.js prefers WebGPU and falls back to WebGL 2. Graphics load only when the hero is visible and motion is permitted; the flat star remains available without JavaScript, with reduced motion, or if graphics fail. Actual drawing pauses when settled, offscreen, or in a hidden tab.
+The subsequent [3D hero enhancement](docs/portfolio-3d.md) gives the hero star depth, pointer tilt, and a turn on click, tap, Enter, or Space. Three.js prefers WebGPU and falls back to WebGL 2. Graphics load only when the hero is visible and motion is permitted; the flat star remains available without JavaScript, with reduced motion, or if graphics fail. Actual drawing pauses when settled, offscreen, or in a hidden tab.
 
-The latest [scroll reveal and original work pass](docs/portfolio-reveals.md) adds masked heading lines, artwork wipes followed by captions, converging work-explorer circles, extending timeline dividers, and the two-part footer entrance. Entrances play once and settle on focus, filtering, resize, or reduced-motion changes. No animation dependency was added.
+The [scroll reveal and original work pass](docs/portfolio-reveals.md) adds masked heading lines, artwork wipes followed by captions, converging work-explorer circles, extending timeline dividers, and the two-part footer entrance. Entrances play once and settle on focus, filtering, resize, or reduced-motion changes. No animation dependency was added.
+
+The latest [parchment and burgundy palette](docs/portfolio-colour.md) replaces the green interface accents with burgundy, warm neutrals, and pale rose on dark surfaces. CSS colour tokens also drive the 3D star and its flat fallback; the favicon and social image use matching colours. This pass passed lint, a production build, Chromium/Firefox/WebKit browser checks, and contrast checks for interactive states. Original artwork and photographs retain their source colours.
+
+The [follow-up review](docs/portfolio-review.md) fixes horizontal overflow with increased text spacing and settles work-filter animations when a project receives keyboard focus. It checks all six pages with spacing overrides in Chromium, Firefox, and WebKit, along with mobile section links, landscape layout, contrast, and the existing browsing and reveal checks.
 
 Run lint and the production build after content or layout changes. Browser checks should cover desktop and mobile widths, all work filters and work pages, keyboard navigation, experience disclosures, CV delivery, clipboard feedback, and terminal commands. Compare the downloaded CV to the source PDF. Check both reduced motion and the page without JavaScript; do not equate a passing build with visual or accessibility verification.
 

@@ -28,10 +28,24 @@ export default function WorkGrid() {
       animations.current.forEach((animation) => animation.cancel());
       animations.current = [];
     };
+    const onFocus = (event: FocusEvent) => {
+      if (!animations.current.some((animation) => animation.playState === "running"))
+        return;
+      settle();
+      // Focus must land at the card's final position, clear of the sticky header.
+      (event.target as HTMLElement).scrollIntoView({
+        block: "nearest",
+        inline: "nearest",
+        behavior: "instant",
+      });
+    };
+    const element = grid.current;
+    element?.addEventListener("focusin", onFocus);
     motion.addEventListener("change", settle);
     window.addEventListener("resize", settle);
     return () => {
       settle();
+      element?.removeEventListener("focusin", onFocus);
       motion.removeEventListener("change", settle);
       window.removeEventListener("resize", settle);
     };

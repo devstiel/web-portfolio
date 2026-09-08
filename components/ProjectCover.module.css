@@ -1,12 +1,12 @@
 .photoCover {
-  color: #f4f2e9;
+  color: var(--paper);
 }
 .reportCover {
   background: #163f51;
 }
 .artCover {
-  background: #e6dfcf;
-  color: #45352a;
+  background: var(--panel);
+  color: var(--ink);
 }
 .originals {
   flex: 1;
@@ -102,8 +102,8 @@
   opacity: 0.8;
 }
 .qa {
-  background: #ddd8cc;
-  color: #45352a;
+  background: var(--panel);
+  color: var(--ink);
 }
 .qaArt {
   flex: 1;
@@ -117,7 +117,7 @@
   letter-spacing: -0.045em;
 }
 .qaTitle em {
-  color: #9b3e26;
+  color: var(--accent);
 }
 .qaAnnotation {
   position: absolute;
@@ -134,11 +134,11 @@
   height: 100px;
   right: 10%;
   bottom: 18%;
-  border: 1.5px solid #9b3e26;
+  border: 1.5px solid var(--accent);
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: #9b3e26;
+  color: var(--accent);
   font-family: var(--font-serif);
   font-size: 70px;
   transform: rotate(12deg);
@@ -147,7 +147,7 @@
   content: "";
   position: absolute;
   inset: 5px -5px -3px 5px;
-  border: 1px solid #9b3e26;
+  border: 1px solid var(--accent);
   border-radius: 50%;
 }
 .qaFooter {
@@ -223,8 +223,8 @@
   width: 40px;
 }
 .creative {
-  background: #d9f76b;
-  color: #303720;
+  background: var(--accent);
+  color: var(--paper);
 }
 .creativeArt {
   flex: 1;
@@ -256,7 +256,7 @@
   right: 3%;
   width: 95px;
   transform: rotate(15deg);
-  color: #809c32;
+  color: var(--accent-light);
 }
 .creativeStamp {
   position: absolute;
@@ -275,7 +275,7 @@
 }
 .illustration {
   background: #283d6b;
-  color: #f3eddc;
+  color: var(--paper);
 }
 .illustrationArt {
   flex: 1;
@@ -289,14 +289,14 @@
   letter-spacing: -0.035em;
 }
 .holidayTitle em {
-  color: #d6e49a;
+  color: var(--accent-light);
 }
 .holidayStar {
   width: 100px;
   position: absolute;
   right: 4%;
   top: 15%;
-  color: #d6e49a;
+  color: var(--accent-light);
   transform: rotate(14deg);
 }
 .holidaySmallStar {

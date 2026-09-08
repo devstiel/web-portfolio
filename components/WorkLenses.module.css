@@ -28,7 +28,8 @@
   margin-left: -27px;
 }
 .diagram button[aria-pressed="true"] {
-  background: var(--acid);
+  color: var(--paper);
+  background: var(--accent);
   font-weight: 600;
 }
 .diagram button:is(:hover, :focus-visible) {
@@ -37,7 +38,13 @@
 .diagram button:focus-visible {
   outline-offset: -6px;
 }
+.diagram button[aria-pressed="true"]:focus-visible {
+  outline-color: var(--paper);
+}
 .star {
+  color: var(--paper);
+  stroke: var(--accent);
+  stroke-width: 3px;
   position: absolute;
   width: 24px;
   height: 24px;
@@ -77,7 +84,7 @@
 .project {
   display: block;
   padding: 15px 0;
-  border-top: 1px solid #bfc2b1;
+  border-top: 1px solid var(--line);
 }
 .projectHeading {
   display: flex;

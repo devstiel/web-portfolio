@@ -1,10 +1,16 @@
 :root {
-  --paper: #f4f2e9;
-  --ink: #252720;
-  --muted: #626459;
-  --line: #c9c9bd;
-  --acid: #d9f76b;
-  --white: #fffef9;
+  --paper: #f5efe7;
+  --ink: #292225;
+  --muted: #6b5c62;
+  --line: #ccbdbb;
+  --accent: #7b3048;
+  --accent-light: #e8b6c4;
+  --accent-edge: #491b2b;
+  --panel: #ebe0dc;
+  --dark-panel: #382b32;
+  --dark-line: #67545d;
+  --on-dark-muted: #d6c6ca;
+  --white: #fffaf5;
   --max-width: 1360px;
 }
 
@@ -64,15 +70,16 @@ summary {
   outline-offset: 6px;
 }
 ::selection {
-  color: var(--ink);
-  background: var(--acid);
+  color: var(--paper);
+  background: var(--accent);
 }
 .skip-link {
   position: fixed;
   top: 12px;
   left: 20px;
   z-index: 100;
-  background: var(--acid);
+  color: var(--paper);
+  background: var(--accent);
   padding: 12px 20px;
   transform: translateY(-160%);
 }

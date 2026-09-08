@@ -4,7 +4,7 @@
   padding-top: 60px;
 }
 .footer :focus-visible {
-  outline-color: var(--acid);
+  outline-color: var(--accent-light);
 }
 .heading {
   display: flex;
@@ -14,7 +14,7 @@
 .heading > svg {
   width: 36px;
   height: 36px;
-  color: var(--acid);
+  color: var(--accent-light);
 }
 .contactGrid {
   display: grid;
@@ -24,6 +24,8 @@
   align-items: end;
 }
 .contactGrid h2 {
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(100px, 11vw, 168px);
@@ -32,26 +34,31 @@
 }
 .contactGrid h2 em {
   font-style: normal;
-  color: var(--acid);
+  color: var(--accent-light);
+}
+.contactCopy {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .contactCopy > p {
   font-size: 16px;
   line-height: 1.8;
-  color: #c2c5b8;
+  color: var(--on-dark-muted);
   margin-bottom: 22px;
 }
 .email {
   display: inline-flex;
+  max-width: 100%;
   justify-content: space-between;
   align-items: center;
   gap: 26px;
-  border-bottom: 1px solid #7c8170;
+  border-bottom: 1px solid var(--on-dark-muted);
   padding-bottom: 8px;
   font-size: clamp(17px, 1.7vw, 25px);
   letter-spacing: -0.035em;
 }
 .email:hover {
-  color: var(--acid);
+  color: var(--accent-light);
 }
 .copyRow {
   display: flex;
@@ -64,7 +71,7 @@
 .copyButton {
   border: 0;
   background: none;
-  color: #c2c5b8;
+  color: var(--on-dark-muted);
   padding-block: 10px;
   min-height: 44px;
   font-size: 11px;
@@ -73,11 +80,11 @@
   align-items: center;
 }
 .copyButton:hover {
-  color: var(--acid);
+  color: var(--accent-light);
 }
 .copyStatus {
   font-size: 11px;
-  color: var(--acid);
+  color: var(--accent-light);
 }
 .socials {
   display: flex;
@@ -93,17 +100,17 @@
   min-height: 44px;
 }
 .socials a:hover {
-  color: var(--acid);
+  color: var(--accent-light);
 }
 .bottom {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   align-items: center;
-  border-top: 1px solid #505447;
+  border-top: 1px solid var(--dark-line);
   min-height: 85px;
   font-size: 10px;
-  color: #bec1b4;
+  color: var(--on-dark-muted);
 }
 .bottom a {
   display: inline-flex;
@@ -112,7 +119,7 @@
   gap: 15px;
 }
 .bottom a:hover {
-  color: var(--acid);
+  color: var(--accent-light);
 }
 @media (max-width: 900px) {
   .contactGrid {

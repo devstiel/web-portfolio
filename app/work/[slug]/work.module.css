@@ -19,6 +19,7 @@
   color: var(--muted);
 }
 .heading h1 {
+  overflow-wrap: anywhere;
   font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(60px, 7.5vw, 110px);
@@ -151,7 +152,8 @@
     transform 200ms ease;
 }
 .next:is(:hover, :focus-visible) > span {
-  background: var(--acid);
+  color: var(--paper);
+  background: var(--accent);
   transform: rotate(45deg);
 }
 @media (max-width: 760px) {

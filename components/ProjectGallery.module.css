@@ -27,7 +27,7 @@
 .grid a {
   display: block;
   position: relative;
-  background: #e9eadd;
+  background: var(--panel);
   padding: 18px;
 }
 .grid img {

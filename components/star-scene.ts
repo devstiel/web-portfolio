@@ -43,18 +43,23 @@ export async function createStarScene(
     curveSegments: 1,
   });
   geometry.center();
+  // Read the same palette as the SVG fallback and surrounding interface.
+  const palette = getComputedStyle(canvas);
   const face = new MeshStandardMaterial({
-    color: "#d9f76b",
+    color: palette.getPropertyValue("--accent").trim(),
     roughness: 0.48,
     metalness: 0.04,
   });
-  const edge = new MeshStandardMaterial({ color: "#677c2d", roughness: 0.58 });
+  const edge = new MeshStandardMaterial({
+    color: palette.getPropertyValue("--accent-edge").trim(),
+    roughness: 0.58,
+  });
   const star = new Mesh(geometry, [face, edge]);
   const scene = new Scene();
-  scene.add(star, new HemisphereLight(0xfffef9, 0x8b8d72, 2.5));
-  const key = new DirectionalLight(0xfff8de, 3.2);
+  scene.add(star, new HemisphereLight(0xfffaf5, 0x8b747e, 2.5));
+  const key = new DirectionalLight(0xfff5eb, 3.2);
   key.position.set(-3, 4, 6);
-  const rim = new DirectionalLight(0xf5ffd9, 1.4);
+  const rim = new DirectionalLight(0xffe9ef, 1.4);
   rim.position.set(4, -1, -3);
   scene.add(key, rim);
   const camera = new OrthographicCamera(-1.8, 1.8, 1.8, -1.8, 0.1, 20);

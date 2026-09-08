@@ -1,0 +1,909 @@
+{
+  "date": "2026-09-08",
+  "lint": "passed",
+  "finalProductionBuild": "passed",
+  "before": {
+    "spacingOverflow": [
+      {
+        "route": "/",
+        "width": 320,
+        "overflow": 68
+      },
+      {
+        "route": "/",
+        "width": 390,
+        "overflow": 79
+      },
+      {
+        "route": "/",
+        "width": 768,
+        "overflow": 24
+      },
+      {
+        "route": "/work/sampoerna-product-qa",
+        "width": 320,
+        "overflow": 18
+      },
+      {
+        "route": "/work/its-social-media",
+        "width": 320,
+        "overflow": 18
+      },
+      {
+        "route": "/terminal",
+        "width": 320,
+        "overflow": 18
+      }
+    ],
+    "filterFocus": [
+      {
+        "name": "ITS Public Communication Unit2024\u00e2\u20ac\u201c2503 / Creative & team leadershipSel",
+        "animations": [
+          {
+            "target": "DIV",
+            "opacity": "1",
+            "transform": "none"
+          },
+          {
+            "target": "SPAN",
+            "opacity": "1",
+            "transform": "matrix(0.998859, 0.0477607, -0.0477607, 0.998859, 0, 0)"
+          },
+          {
+            "target": "SPAN",
+            "opacity": "1",
+            "transform": "matrix(0.998859, 0.0477607, -0.0477607, 0.998859, 0, 0)"
+          },
+          {
+            "target": "ARTICLE",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 497.837)"
+          },
+          {
+            "target": "ARTICLE",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 497.837)"
+          },
+          {
+            "target": "DIV",
+            "opacity": "1",
+            "transform": "none"
+          }
+        ]
+      }
+    ]
+  },
+  "engines": {
+    "chromium": {
+      "anchors": [
+        {
+          "id": "work",
+          "top": 84.9375,
+          "header": 73,
+          "scroll": 556
+        },
+        {
+          "id": "about",
+          "top": 85.234375,
+          "header": 73,
+          "scroll": 3525
+        },
+        {
+          "id": "experience",
+          "top": 84.515625,
+          "header": 73,
+          "scroll": 5919
+        },
+        {
+          "id": "contact",
+          "top": 122.65625,
+          "header": 73,
+          "scroll": 7500
+        }
+      ],
+      "spacing": [
+        {
+          "route": "/",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 320,
+          "overflow": 0,
+          "outside": [
+            {
+              "tag": "EM",
+              "cls": "",
+              "text": "holiday"
+            }
+          ]
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        }
+      ],
+      "focus": [
+        {
+          "name": "ITS Public Communication Unit2024\u00e2\u20ac\u201c2503 / Creative & team leadershipSel",
+          "top": 264.90625,
+          "bottom": 991.40625,
+          "header": 85,
+          "animations": [
+            {
+              "target": "DIV",
+              "opacity": "1",
+              "transform": "none"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.989035, 0.147681, -0.147681, 0.989035, 0, 0)"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.989035, 0.147681, -0.147681, 0.989035, 0, 0)"
+            }
+          ]
+        }
+      ],
+      "landscape": [
+        {
+          "width": 844,
+          "overflow": 0,
+          "headerHeight": 85
+        }
+      ]
+    },
+    "firefox": {
+      "anchors": [
+        {
+          "id": "work",
+          "top": 85,
+          "header": 73,
+          "scroll": 555.9666748046875
+        },
+        {
+          "id": "about",
+          "top": 85,
+          "header": 73,
+          "scroll": 3525.38330078125
+        },
+        {
+          "id": "experience",
+          "top": 85,
+          "header": 73,
+          "scroll": 5918.9501953125
+        },
+        {
+          "id": "contact",
+          "top": 90.36666870117188,
+          "header": 73,
+          "scroll": 7533
+        }
+      ],
+      "spacing": [
+        {
+          "route": "/",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 320,
+          "overflow": 0,
+          "outside": [
+            {
+              "tag": "EM",
+              "cls": "",
+              "text": "holiday"
+            }
+          ]
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        }
+      ],
+      "focus": [
+        {
+          "name": "ITS Public Communication Unit2024\u00e2\u20ac\u201c2503 / Creative & team leadershipSel",
+          "top": 99.71665954589844,
+          "bottom": 826.2666473388672,
+          "header": 85,
+          "animations": [
+            {
+              "target": "DIV",
+              "opacity": "1",
+              "transform": "none"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.999904, 0.0138634, -0.0138634, 0.999904, 0, 0)"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.999904, 0.0138634, -0.0138634, 0.999904, 0, 0)"
+            }
+          ]
+        }
+      ],
+      "landscape": [
+        {
+          "width": 844,
+          "overflow": 0,
+          "headerHeight": 85
+        }
+      ]
+    },
+    "webkit": {
+      "anchors": [
+        {
+          "id": "work",
+          "top": 84.90625,
+          "header": 73,
+          "scroll": 556
+        },
+        {
+          "id": "about",
+          "top": 85.015625,
+          "header": 73,
+          "scroll": 3525
+        },
+        {
+          "id": "experience",
+          "top": 85.28125,
+          "header": 73,
+          "scroll": 5918
+        },
+        {
+          "id": "contact",
+          "top": 122.421875,
+          "header": 73,
+          "scroll": 7500
+        }
+      ],
+      "spacing": [
+        {
+          "route": "/",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/sampoerna-product-qa",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/its-social-media",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/pln-business-analysis",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 320,
+          "overflow": 0,
+          "outside": [
+            {
+              "tag": "EM",
+              "cls": "",
+              "text": "holiday"
+            }
+          ]
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/work/team-liquid-holiday",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 320,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 390,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 768,
+          "overflow": 0,
+          "outside": []
+        },
+        {
+          "route": "/terminal",
+          "width": 1440,
+          "overflow": 0,
+          "outside": []
+        }
+      ],
+      "focus": [
+        {
+          "name": "ITS Public Communication Unit2024\u00e2\u20ac\u201c2503 / Creative & team leadershipSel",
+          "top": 273.6875,
+          "bottom": 1000.1875,
+          "header": 85,
+          "animations": [
+            {
+              "target": "DIV",
+              "opacity": "1",
+              "transform": "none"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.965214, 0.261459, -0.261459, 0.965214, 0, 0)"
+            },
+            {
+              "target": "SPAN",
+              "opacity": "1",
+              "transform": "matrix(0.965214, 0.261459, -0.261459, 0.965214, 0, 0)"
+            }
+          ]
+        }
+      ],
+      "landscape": [
+        {
+          "width": 844,
+          "overflow": 0,
+          "headerHeight": 85
+        }
+      ]
+    }
+  },
+  "browserFlows": {
+    "checks": [
+      "Homepage and four project cards",
+      "All three work filters show the correct projects",
+      "Experience expands and collapses with keyboard",
+      "CV download is byte-identical to supplied PDF",
+      "Copy email writes the correct address",
+      "Contact links match supplied sources",
+      "No document overflow at six widths, 320\u00e2\u20ac\u201c1440px",
+      "Mobile menu navigation and Escape focus return",
+      "All four work pages load and fit phone/tablet/desktop",
+      "Project entry and return navigation",
+      "Unknown project returns a real 404",
+      "Terminal source content, command history and clear",
+      "Terminal CV link",
+      "Local API source accuracy and invalid-input responses",
+      "Social preview returns a PNG",
+      "Core content and CV remain available without JavaScript",
+      "Clipboard failure offers a usable fallback"
+    ],
+    "errors": [],
+    "a11y": [
+      {
+        "page": "home-desktop",
+        "violations": []
+      },
+      {
+        "page": "home-mobile",
+        "violations": []
+      },
+      {
+        "page": "sampoerna-product-qa",
+        "violations": []
+      },
+      {
+        "page": "pln-business-analysis",
+        "violations": []
+      },
+      {
+        "page": "its-social-media",
+        "violations": []
+      },
+      {
+        "page": "team-liquid-holiday",
+        "violations": []
+      },
+      {
+        "page": "terminal",
+        "violations": []
+      }
+    ]
+  },
+  "reveals": {
+    "checks": [
+      "Heading lines reveal separately with a 100ms stagger",
+      "Project artwork wipes in before its captions and does not replay",
+      "Circle entrances preserve the interactive work explorer",
+      "Timeline dividers draw in and keyboard disclosures still expand",
+      "Footer participates in the same two-line reveal sequence",
+      "Keyboard focus immediately settles an unfinished project wipe",
+      "Rapid filtering settles all child reveals without hidden cards",
+      "Reduced-motion changes settle all active entrances",
+      "Homepage fits six widths from 320 to 1440px",
+      "Both original-image galleries load, fit three widths, and link to full images",
+      "Without JavaScript, headings, all projects, and gallery links remain available"
+    ],
+    "errors": [],
+    "a11y": [
+      {
+        "slug": "pln-business-analysis",
+        "violations": []
+      },
+      {
+        "slug": "its-social-media",
+        "violations": []
+      }
+    ]
+  },
+  "palette": {
+    "date": "2026-09-08",
+    "contrast": [
+      {
+        "name": "Body text on parchment",
+        "colors": [
+          "rgb(41, 34, 37)",
+          "rgb(245, 239, 231)"
+        ],
+        "ratio": 13.62,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selection text",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Focused skip link",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "CV hover",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "CV keyboard focus",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selected work explorer",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Selected explorer focus ring",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 3
+      },
+      {
+        "name": "Expanded experience icon",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Hovered project arrow",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Rose accent on dark footer",
+        "colors": {
+          "bg": "rgb(41, 34, 37)",
+          "fg": "rgb(232, 182, 196)"
+        },
+        "ratio": 8.83,
+        "threshold": 4.5
+      },
+      {
+        "name": "Focused next project arrow",
+        "colors": [
+          "rgb(245, 239, 231)",
+          "rgb(123, 48, 72)"
+        ],
+        "ratio": 7.79,
+        "threshold": 4.5
+      },
+      {
+        "name": "Terminal submit button",
+        "colors": [
+          "rgb(41, 34, 37)",
+          "rgb(232, 182, 196)"
+        ],
+        "ratio": 8.83,
+        "threshold": 4.5
+      }
+    ]
+  },
+  "methodNotes": [
+    "WebKit link focus is direct because its default Tab order skips links.",
+    "Baseline and reveal suites ran before the final project-title wrap rule; the three-engine and contrast checks ran after it."
+  ]
+}

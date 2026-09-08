@@ -1,44 +1,44 @@
 .terminal {
   border: 1px solid var(--ink);
-  background: #292c25;
-  color: #e8ecdf;
+  background: var(--ink);
+  color: var(--paper);
   font-family: "Courier New", monospace;
 }
 .terminal :focus-visible {
-  outline-color: var(--acid);
+  outline-color: var(--accent-light);
   outline-offset: 3px;
 }
 .titleBar {
-  background: #35392e;
+  background: var(--dark-panel);
   padding: 14px 24px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  color: #c5cdb8;
+  color: var(--on-dark-muted);
   font-size: 11px;
-  border-bottom: 1px solid #525849;
+  border-bottom: 1px solid var(--dark-line);
 }
 .log {
   height: 370px;
   overflow: auto;
   overscroll-behavior: contain;
   padding: 28px;
-  scrollbar-color: #929b7e #292c25;
+  scrollbar-color: var(--on-dark-muted) var(--ink);
 }
 .welcome {
-  color: var(--acid);
+  color: var(--accent-light);
   font-size: 15px;
   line-height: 1.9;
 }
 .welcome > span {
-  color: #c5cdb8;
+  color: var(--on-dark-muted);
   font-size: 12px;
 }
 .entry {
   padding-top: 22px;
 }
 .command {
-  color: var(--acid);
+  color: var(--accent-light);
   font-size: 14px;
   overflow-wrap: anywhere;
   margin-bottom: 10px;
@@ -51,19 +51,19 @@
   overflow-wrap: anywhere;
 }
 .entry a {
-  color: var(--acid);
+  color: var(--accent-light);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 .form {
-  border-top: 1px solid #525849;
+  border-top: 1px solid var(--dark-line);
   display: flex;
   align-items: center;
   gap: 18px;
   padding: 12px 24px;
 }
 .form label {
-  color: var(--acid);
+  color: var(--accent-light);
   font-size: 13px;
   white-space: nowrap;
 }
@@ -77,11 +77,11 @@
   font-size: 14px;
 }
 .form input::placeholder {
-  color: #aeb5a1;
+  color: #bca7af;
 }
 .form button {
   color: var(--ink);
-  background: var(--acid);
+  background: var(--accent-light);
   border: 0;
   min-width: 44px;
   height: 44px;
@@ -92,19 +92,19 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px 14px;
-  background: #35392e;
-  border-top: 1px solid #525849;
+  background: var(--dark-panel);
+  border-top: 1px solid var(--dark-line);
 }
 .shortcuts button {
   background: none;
   border: 0;
-  color: #d2d9c6;
+  color: var(--on-dark-muted);
   min-height: 36px;
   font-size: 11px;
   padding: 4px;
 }
 .shortcuts button:hover {
-  color: var(--acid);
+  color: var(--accent-light);
   text-decoration: underline;
 }
 @media (max-width: 540px) {
