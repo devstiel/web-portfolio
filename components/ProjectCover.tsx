@@ -1,8 +1,10 @@
 import type { Work } from "@/data/portfolioData";
+import Image from "next/image";
+import { projectMedia } from "@/data/portfolioMedia";
 import Star from "./Star";
 import styles from "./ProjectCover.module.css";
 
-/** Original typographic covers, not reproductions of client work. */
+/** Supplied work imagery where available, with typographic introductions as fallback. */
 export default function ProjectCover({
   work,
   large = false,
@@ -10,6 +12,44 @@ export default function ProjectCover({
   work: Work;
   large?: boolean;
 }) {
+  const media = projectMedia[work.slug];
+  if (media)
+    return (
+      <div
+        className={`${styles.cover} ${styles.photoCover} ${media.cover.length > 1 ? styles.artCover : styles.reportCover} ${large ? styles.large : ""}`}
+      >
+        <div className={styles.top}>
+          <span>{work.company}</span>
+          <span>{work.year}</span>
+        </div>
+        <div className={styles.originals}>
+          {media.cover.map((asset) => (
+            <Image
+              key={asset.src}
+              src={asset.src}
+              alt={asset.alt}
+              width={asset.width}
+              height={asset.height}
+              sizes={
+                media.cover.length > 1
+                  ? large
+                    ? "(max-width: 700px) 26vw, (max-width: 1500px) 30vw, 410px"
+                    : "(max-width: 700px) 28vw, (max-width: 1500px) 15vw, 210px"
+                  : large
+                    ? "(max-width: 1500px) 90vw, 1200px"
+                    : "(max-width: 700px) 90vw, (max-width: 1500px) 45vw, 620px"
+              }
+            />
+          ))}
+        </div>
+        <div className={styles.bottom}>
+          <span>
+            {work.number} / {work.category}
+          </span>
+          <span>Selected work</span>
+        </div>
+      </div>
+    );
   return (
     <div
       className={`${styles.cover} ${styles[work.theme]} ${large ? styles.large : ""}`}

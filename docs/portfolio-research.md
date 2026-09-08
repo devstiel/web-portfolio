@@ -1,6 +1,6 @@
 # Portfolio research and repository review
 
-Reviewed 5 September 2026. This is a research and design brief; the website implementation has not been changed.
+Historical review from 5 September 2026, before implementation. The findings below describe the former website. See the [completed redesign and verification](portfolio-redesign.md) for the current result.
 
 The strongest direction for this portfolio is an expressive editorial layout built around Devy's actual product QA, business analysis, and creative work. The current implementation gives much more attention to its fictional developer persona and console than to evidence of that work. This is a design judgment based on the source and rendered pages, not a claim that a particular visual style proves AI authorship.
 
@@ -34,13 +34,13 @@ These examples demonstrate different successful-looking approaches; none is a un
 | --- | --- | --- |
 | The professional identity is mostly placeholder content. | [portfolioData.ts](../data/portfolioData.ts) explicitly labels its data as placeholder. NovaTech, PixelForge, eight project entries, numerical skill ratings, and the displayed experience/project totals are not substantiated by the supplied CV. | Replace placeholder claims with sourced experience and selected work. Do not translate self-assessed skill scores into professional evidence. |
 | The personal voice is generic and unsupported. | The About data includes a Neopets origin story, typing speed, matcha, cloud goals, and an AWS certification that the supplied material does not establish. | Write a short introduction grounded in actual interests and work. Leave unknown personality details out. |
-| The first screen prioritizes operating the interface. | [HeroDashboard](../components/HeroDashboard/HeroDashboard.tsx) promotes “Explore HUD” and “Dedicated Console”; a large terminal takes the other column. | Put “Selected work”, CV, and contact within immediate reach. Move the terminal to an optional experiment. |
+| The first screen prioritizes operating the interface. | The former `HeroDashboard` component promotes “Explore HUD” and “Dedicated Console”; a large terminal takes the other column. | Put “Selected work”, CV, and contact within immediate reach. Move the terminal to an optional experiment. |
 | The strongest evidence appears late. | In the 1440 × 1000 dark-mode browser pass, About began near y=1,637, Experience at 2,438, and Projects at 4,377. Total height was about 6,485px. Mobile height was about 12,231px. | Place selected work immediately after the introduction. Remove repeated mission, status, and character panels. These measurements are observations of this viewport/build, not universal layout constants. |
 | The site has little visual evidence of its owner. | The rendered homepage had zero image elements; public assets are starter SVGs. Project cards contain text, badges, stars, and folder icons. | Use original campaign artwork, relevant work samples, and optionally a real portrait. Layout alone cannot replace missing project artifacts. |
 | Nearly everything receives the same decorative treatment. | Pixel typography, window chrome, borders, colored badges, quests, XP, skill rarity, and console labels repeat throughout the page. Much supporting copy uses 12px text; many pixel labels use 8.8px or smaller. | Give projects larger visual areas, use a readable body font, vary section composition, and reserve distinctive graphic details for a few deliberate moments. |
 | The contact path is unfinished. | Social links still use `username` and `hello@example.com`; the CV button says “Resume Soon”. The terminal contact command also returns placeholder contact details. | Wire the provided email and social URLs, and serve a downloadable copy of the supplied CV. GitHub is not supplied in social_media.md, so do not guess its handle. |
 | The chatbot has a separate inaccurate biography. | [chat route](../app/api/chat/route.ts) hardcodes the placeholder history, metrics, and different contact details. The terminal also contains additional legacy biography strings. | If retained, generate answers from one verified content source and remove contradictory legacy material. Correcting portfolioData.ts alone will not correct the API prompt. |
-| Desktop project actions are hidden during keyboard focus. | [project CSS](../components/ProjectsGallery/ProjectsGallery.module.css) reveals actions on hover. A browser focus check on the first project link left its action container at opacity 0 and max-height 0px. | Keep essential project links visible, or expose them on focus-within as well as hover. The mobile CSS already exposes these actions. |
+| Desktop project actions are hidden during keyboard focus. | The former `ProjectsGallery.module.css` reveals actions on hover. A browser focus check on the first project link left its action container at opacity 0 and max-height 0px. | Keep essential project links visible, or expose them on focus-within as well as hover. The mobile CSS already exposes these actions. |
 
 ## The actual story available in the CV
 
@@ -95,4 +95,4 @@ A finished version should reflect Devy's own phrasing and chosen career emphasis
 - Verified the light-mode switch, hidden desktop project-link focus state, and placeholder output of the terminal contact command.
 - A production build, real Gemini request, exhaustive accessibility audit, and verification of external project destinations were not performed. The AI endpoint was reviewed in source.
 - Browser evidence is stored locally under `%TEMP%\devy-portfolio-audit` (desktop, mobile, light mode, section captures, reference captures, and capture scripts). These temporary files may be cleaned up by the operating system.
-- Only this research note was added to the repository. Existing source/content files were preserved.
+- At the time of this research pass, only this note was added. Implementation was completed in the subsequent redesign phase.

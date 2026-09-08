@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Three.js renders the star with an available graphics backend",
+    "Pointer movement changes the rendered sculpture and leaving settles it",
+    "Enter and Space turn the sculpture through a native button",
+    "GPU draw calls stop when settled or offscreen and resume on return",
+    "The visibility-change handler pauses rendering in a hidden document",
+    "The sculpture fits six viewport widths with capped drawing resolution",
+    "Changing motion preference disposes graphics and restores one scene when re-enabled",
+    "Navigating away disposes the scene and returning creates one replacement",
+    "A real WebGL context loss restores the static star",
+    "Reduced motion on initial load skips the Three.js engine download",
+    "Unavailable graphics leave the static identity and portfolio content intact",
+    "Touch activates a 3D turn while preserving vertical scrolling",
+    "Motion changes during a delayed engine download leave one working scene",
+    "Without JavaScript the static star and all four work cards remain visible"
+  ],
+  "errors": [],
+  "backend": "webgl2",
+  "a11y": []
+}

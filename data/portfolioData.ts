@@ -5,7 +5,7 @@ export const profile = {
   email: "devy.reliani.s@gmail.com",
   disciplines: ["Product QA", "Business analysis", "Creative work"],
   introduction:
-    "I’m Devy, a Computer Science graduate with a creative streak. My work takes me from testing digital products to making sense of data and bringing creative teams together.",
+    "I’m Devy, a Computer Science graduate from ITS. I test digital products, make sense of data, and help creative teams turn ideas into things people can use and enjoy.",
   about: [
     "“What happens if the user does this instead?” That’s the kind of question I like working through. I’m interested in how people use things, where they get stuck, and the details that make an experience feel right.",
     "That curiosity has taken me into product QA, business analysis, and creative work. Sometimes I’m translating a requirement into test cases. Other times, I’m organising a report or helping a team turn an idea into something people can see.",
@@ -125,7 +125,7 @@ export const works: Work[] = [
         ],
       },
     ],
-    note: "The cover is a typographic summary of the reporting scope, not a screenshot of an internal PLN report.",
+    note: "Original reporting artwork from my portfolio. The cover shows the November 2025 snapshot; the 39,349-transaction scope below comes from December. Both snapshots are included in the gallery.",
   },
   {
     slug: "its-social-media",
@@ -172,7 +172,7 @@ export const works: Work[] = [
         ],
       },
     ],
-    note: "This is an overview of my leadership role. The cover is an editorial treatment; individual campaign assets are not displayed.",
+    note: "Original ITS illustrations from my creative portfolio, arranged for this cover. The artwork spans my broader ITS involvement; the leadership outcomes below belong to the team.",
   },
   {
     slug: "team-liquid-holiday",

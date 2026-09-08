@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import Star from "@/components/Star";
 export const alt =
   "Devy Relliani — Product QA, business analysis & creative work";
 export const size = { width: 1200, height: 630 };
@@ -63,7 +64,7 @@ export default function Image() {
               fontSize: 120,
             }}
           >
-            ✳
+            <Star size={110} />
           </div>
         </div>
         <div

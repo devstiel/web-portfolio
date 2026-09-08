@@ -1,6 +1,6 @@
 # Devy Relliani — portfolio
 
-A personal portfolio for Devy Relliani Saffiyah, built with Next.js App Router, React, TypeScript, and CSS Modules. The design uses an editorial layout, original typographic project covers, and a small optional terminal.
+A personal portfolio for Devy Relliani Saffiyah, built with Next.js App Router, React, TypeScript, and CSS Modules. The editorial layout combines original work samples, typographic covers, scroll reveals, and a small optional terminal.
 
 ## Run locally
 
@@ -29,7 +29,7 @@ For deployment, set `NEXT_PUBLIC_SITE_URL` to the site's actual absolute URL so 
 - `/api/chat`: retained as a compatibility endpoint, now a deterministic local lookup using the same public content. Accepts `{ "prompt": "contact" }`. Invalid JSON/prompts return 400; bodies over 2,000 characters return 413. Prompts are limited to 500 characters. No external model calls or secret keys are used.
 - `/opengraph-image`: generated social preview. The favicon is `app/icon.svg`.
 
-The desktop navigation becomes a disclosure menu on small screens. The menu closes on navigation, Escape, outside interaction, and resizing to desktop. Essential content is server-rendered and visible without scroll animations. Native experience disclosures, ordinary project links, a skip link, focus states, reduced-motion styling, and a copy-email fallback support the main browsing path.
+The desktop navigation becomes a disclosure menu on small screens. The menu closes on navigation, Escape, outside pointer or keyboard focus, and resizing to desktop. Navigation indicates the section being read. Essential content is server-rendered and visible without scroll animations. Native experience disclosures, ordinary project links, a skip link, focus states, reduced-motion styling, and a copy-email fallback support the main browsing path.
 
 ## Content and sources
 
@@ -39,6 +39,9 @@ The supplied source material lives in `data/content/`:
 
 - `CV_Devy Relliani Saffiyah (1).pdf`
 - `social_media.md`
+- `Creative Portfolio.pdf` and the slide exports in `portfolio/`, supplied before joining Sampoerna.
+
+The older creative portfolio supplies artwork and photographs. Its education status, GPA, and some role labels predate the CV; current profile facts follow the newer CV. The original PDF and slides stay in the source folder. Visitors receive individual optimized images rather than the 100 MB presentation.
 
 The full current LinkedIn profile could not be read during research. Its search excerpt may be stale; the supplied CV and social links were used for factual content. Introductory first-person copy is editorial writing based on that material, not a quotation from LinkedIn.
 
@@ -52,22 +55,33 @@ Dates marked Present reflect the supplied September 2026 CV. Review them when up
 
 ## Project visuals
 
-`components/ProjectCover.tsx` and its CSS create original, responsive typographic covers. These introduce each project; they are not original client campaign artwork, product screenshots, or internal reports. Work-page notes make the distinction explicit.
+`components/ProjectCover.tsx` uses original PLN reporting visuals and ITS illustrations extracted from the supplied creative portfolio. `components/ProjectGallery.tsx` displays captioned samples with links to full images. `data/portfolioMedia.ts` records dimensions, alternative text, and captions; `public/work/` contains eight WebP assets. A source portrait also appears in About.
 
-Original illustrations, campaign images, and report screenshots were not included in the source folder. When suitable assets are available, add them under `public/work/` and display them with descriptive alternative text and captions on the relevant work page. Do not substitute invented screenshots for original work or publish internal material as a public work sample.
+Sampoerna and Team Liquid retain typographic introductions because their original work samples were not included in this presentation. The PLN gallery distinguishes November and December reporting snapshots. ITS illustrations span the broader creative involvement, including work before the lead role. See [source mapping and reveal notes](docs/portfolio-reveals.md).
 
 ## Design and structure
 
 - `app/globals.css`: paper/ink/lime colours, shared layout, focus and reduced-motion defaults.
 - `app/page.tsx` and `app/page.module.css`: homepage composition.
 - `components/WorkGrid.tsx`: client-side work filters and navigable project cards.
+- `components/StarSculpture.tsx`, `components/star-scene.ts`: deferred Three.js hero sculpture and its graphics lifecycle. `data/starShape.ts` shares the outline with the flat star.
 - `app/work/[slug]/`: work pages and metadata.
 - `components/SiteHeader.tsx`, `SiteFooter.tsx`: shared navigation, contact, CV, and social links.
 - `docs/portfolio-research.md`: pre-redesign research and audit. Its measurements describe the previous site.
 
-The former gamified dashboard, fictional résumé, skill levels, sound system, and model-backed chatbot were replaced. The terminal remains an optional footer link and uses the same factual data as the visible pages. No UI or animation library is required.
+The former gamified dashboard, fictional résumé, skill levels, sound system, and model-backed chatbot were replaced. The terminal remains an optional footer link and uses the same factual data as the visible pages. Interface motion uses CSS and native browser APIs; the hero sculpture loads Three.js separately.
 
 ## Verification
+
+The completed redesign passed production build, lint, 17 browser flow checks, and the tested automated accessibility rules. See [verification notes and previews](docs/portfolio-redesign.md) for the scope, evidence, and remaining content limitations.
+
+The subsequent [award-reference review and refinements](docs/portfolio-polish.md) covers active navigation, keyboard menu behavior, cover interactions, project reading order, and project-specific sharing metadata. Cover motion responds to hover and keyboard focus and is disabled for reduced-motion preferences.
+
+The [motion and interactivity pass](docs/portfolio-motion.md) adds a staggered hero entrance, one-time scroll reveals, animated work filtering, an interactive Logic / Imagination work explorer, and smooth experience disclosures. It uses CSS and browser animation APIs with no new dependencies. Motion respects preference changes, and the underlying content and native disclosures work without JavaScript.
+
+The subsequent [3D hero enhancement](docs/portfolio-3d.md) gives the existing lime star depth, pointer tilt, and a turn on click, tap, Enter, or Space. Three.js prefers WebGPU and falls back to WebGL 2. Graphics load only when the hero is visible and motion is permitted; the flat star remains available without JavaScript, with reduced motion, or if graphics fail. Actual drawing pauses when settled, offscreen, or in a hidden tab.
+
+The latest [scroll reveal and original work pass](docs/portfolio-reveals.md) adds masked heading lines, artwork wipes followed by captions, converging work-explorer circles, extending timeline dividers, and the two-part footer entrance. Entrances play once and settle on focus, filtering, resize, or reduced-motion changes. No animation dependency was added.
 
 Run lint and the production build after content or layout changes. Browser checks should cover desktop and mobile widths, all work filters and work pages, keyboard navigation, experience disclosures, CV delivery, clipboard feedback, and terminal commands. Compare the downloaded CV to the source PDF. Check both reduced motion and the page without JavaScript; do not equate a passing build with visual or accessibility verification.
 

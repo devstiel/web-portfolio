@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "Heading lines reveal separately with a 100ms stagger",
+    "Project artwork wipes in before its captions and does not replay",
+    "Circle entrances preserve the interactive work explorer",
+    "Timeline dividers draw in and keyboard disclosures still expand",
+    "Footer participates in the same two-line reveal sequence",
+    "Keyboard focus immediately settles an unfinished project wipe",
+    "Rapid filtering settles all child reveals without hidden cards",
+    "Reduced-motion changes settle all active entrances",
+    "Homepage fits six widths from 320 to 1440px",
+    "Both original-image galleries load, fit three widths, and link to full images",
+    "Without JavaScript, headings, all projects, and gallery links remain available"
+  ],
+  "errors": [],
+  "a11y": [
+    {
+      "slug": "pln-business-analysis",
+      "violations": []
+    },
+    {
+      "slug": "its-social-media",
+      "violations": []
+    }
+  ]
+}

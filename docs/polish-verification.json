@@ -1,0 +1,11 @@
+{
+  "checks": [
+    "Active navigation follows all sections and clears at the introduction",
+    "Mobile menu closes when focus leaves and returns focus on Escape",
+    "All four projects have matching social metadata, an image and canonical URL",
+    "Project facts precede narratives on all four pages",
+    "Reduced motion keeps the cover artwork still",
+    "Cover interaction responds equally to hover and keyboard focus"
+  ],
+  "errors": []
+}

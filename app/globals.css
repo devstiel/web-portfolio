@@ -169,6 +169,16 @@ a:hover .arrow {
     scroll-padding-top: 85px;
   }
 }
+.reveal-mask {
+  display: block;
+  overflow: clip;
+  padding: 0.13em 0.08em;
+  margin: -0.13em -0.08em;
+}
+.reveal-mask > [data-reveal-line] {
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

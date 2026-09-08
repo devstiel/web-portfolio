@@ -1,7 +1,12 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import WorkGrid from "@/components/WorkGrid";
-import Star from "@/components/Star";
+import StarSculpture from "@/components/StarSculpture";
+import ScrollReveals from "@/components/ScrollReveals";
+import WorkLenses from "@/components/WorkLenses";
+import ExperienceItem from "@/components/ExperienceItem";
+import RevealHeading from "@/components/RevealHeading";
+import Image from "next/image";
 import {
   capabilities,
   certifications,
@@ -15,6 +20,7 @@ export default function Home() {
   return (
     <>
       <SiteHeader />
+      <ScrollReveals />
       <main id="main">
         <section
           className={`shell ${styles.hero}`}
@@ -28,14 +34,16 @@ export default function Home() {
             <div className={styles.nameBlock}>
               <p className={styles.hello}>Hello there, I’m</p>
               <h1 id="intro-title" className={styles.name}>
-                DEVY
+                <span className={styles.nameLine}>DEVY</span>
                 <br />
-                RELLIANI<span>.</span>
+                <span className={styles.nameLine}>
+                  RELLIANI<span className={styles.periodMark}>.</span>
+                </span>
               </h1>
             </div>
             <div className={styles.heroAside}>
               <div className={styles.curiosityMark}>
-                <Star />
+                <StarSculpture />
                 <span>
                   A curious mind.
                   <br />
@@ -76,13 +84,13 @@ export default function Home() {
               <p className="section-label eyebrow">
                 <span>01</span> Selected work
               </p>
-              <h2 id="work-title">
-                Different hats.
-                <br />
-                <em>Same curiosity.</em>
-              </h2>
+              <RevealHeading
+                id="work-title"
+                first="Different hats."
+                second="Same curiosity."
+              />
             </div>
-            <p className={styles.sectionIntro}>
+            <p className={styles.sectionIntro} data-reveal>
               A selection of work across products,
               <br className={styles.desktopBreak} /> numbers, people, and a
               little illustration.
@@ -98,27 +106,35 @@ export default function Home() {
         >
           <div className={`shell ${styles.aboutGrid}`}>
             <div className={styles.aboutLeft}>
-              <p className="section-label eyebrow">
-                <span>02</span> A little about me
-              </p>
-              <h2 id="about-title">
-                A bit of
-                <br />
-                <em>both worlds.</em>
-              </h2>
-              <div className={styles.aboutMark}>
-                <span>LOGIC</span>
-                <div className={styles.venn}>
-                  <span />
-                  <span />
-                  <Star />
-                </div>
-                <span>IMAGINATION</span>
+              <div>
+                <p className="section-label eyebrow">
+                  <span>02</span> A little about me
+                </p>
+                <RevealHeading
+                  id="about-title"
+                  first="A bit of"
+                  second="both worlds."
+                />
               </div>
+              <WorkLenses />
             </div>
             <div className={styles.aboutCopy}>
+              <figure className={styles.portrait} data-reveal>
+                <Image
+                  src="/work/devy-portrait.webp"
+                  alt="Devy wearing her ITS Social Media team shirt and giving a peace sign."
+                  width={1287}
+                  height={855}
+                  sizes="(max-width: 540px) 70vw, 260px"
+                />
+                <figcaption>
+                  Me, somewhere between the brief and the next idea.
+                </figcaption>
+              </figure>
               {profile.about.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph} data-reveal>
+                  {paragraph}
+                </p>
               ))}
               <a
                 href={profile.socials[0].url}
@@ -136,7 +152,7 @@ export default function Home() {
           </div>
           <div className={`shell ${styles.capabilities}`}>
             {capabilities.map((group, index) => (
-              <div key={group.title}>
+              <div key={group.title} data-reveal data-reveal-delay={index * 70}>
                 <span className="eyebrow">
                   0{index + 1} / Things I work with
                 </span>
@@ -161,11 +177,11 @@ export default function Home() {
               <p className="section-label eyebrow">
                 <span>03</span> The path so far
               </p>
-              <h2 id="experience-title">
-                Good work.
-                <br />
-                <em>Good company.</em>
-              </h2>
+              <RevealHeading
+                id="experience-title"
+                first="Good work."
+                second="Good company."
+              />
             </div>
             <a className="pill-link" href={profile.resume} download>
               Download my CV{" "}
@@ -177,23 +193,29 @@ export default function Home() {
           </div>
           <div className={styles.timeline}>
             {experiences.map((experience, index) => (
-              <details
-                key={experience.company}
-                className={styles.experienceRow}
-                open={index === 0}
-              >
-                <summary>
-                  <span className={styles.period}>{experience.period}</span>
-                  <span className={styles.job}>
-                    <strong>{experience.company}</strong>
-                    <span>{experience.role}</span>
-                  </span>
-                  <span className={styles.expand} aria-hidden="true" />
-                </summary>
-                <div className={styles.experienceDetail}>
-                  <p>{experience.detail}</p>
-                </div>
-              </details>
+              <div key={experience.company} data-reveal="row">
+                <span
+                  className={styles.revealRule}
+                  data-reveal-rule
+                  aria-hidden="true"
+                />
+                <ExperienceItem
+                  className={styles.experienceRow}
+                  initiallyOpen={index === 0}
+                >
+                  <summary>
+                    <span className={styles.period}>{experience.period}</span>
+                    <span className={styles.job}>
+                      <strong>{experience.company}</strong>
+                      <span>{experience.role}</span>
+                    </span>
+                    <span className={styles.expand} aria-hidden="true" />
+                  </summary>
+                  <div className={styles.experienceDetail}>
+                    <p>{experience.detail}</p>
+                  </div>
+                </ExperienceItem>
+              </div>
             ))}
           </div>
           <div className={styles.education}>

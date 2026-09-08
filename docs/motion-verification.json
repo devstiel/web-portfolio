@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Hero name enters in sequence and settles fully visible",
+    "Project scroll reveal plays once and remains visible on return",
+    "Filters animate layout height, retain focus and settle after rapid changes",
+    "Both work lenses support keyboard, isolate inactive links and preserve layout height",
+    "Experience panels animate with keyboard and settle after rapid toggles",
+    "Switching to reduced motion settles an in-flight disclosure and disables filter motion",
+    "Resizing during expansion restores the natural panel height",
+    "Touch lens controls work and the expanded About section fits six viewport widths",
+    "Without JavaScript, project content and native experience disclosures work",
+    "Missing animation APIs preserve filtering and native disclosure behavior"
+  ],
+  "errors": [],
+  "a11y": [
+    {
+      "state": "imagination",
+      "violations": []
+    }
+  ]
+}

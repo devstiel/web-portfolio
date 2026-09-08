@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProjectCover from "@/components/ProjectCover";
+import ProjectGallery from "@/components/ProjectGallery";
+import ScrollReveals from "@/components/ScrollReveals";
 import { works } from "@/data/portfolioData";
 import styles from "./work.module.css";
 
@@ -12,17 +14,32 @@ export function generateStaticParams() {
   return works.map((work) => ({ slug: work.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const { slug } = await params;
   const work = works.find((item) => item.slug === slug);
   if (!work) return {};
+  const title = `${work.company} — ${work.category}`;
+  const images = (await parent).openGraph?.images;
   return {
-    title: `${work.company} — ${work.category}`,
+    title,
     description: work.summary,
+    alternates: { canonical: `/work/${work.slug}` },
+    openGraph: {
+      title: `${title} — Devy Relliani`,
+      description: work.summary,
+      url: `/work/${work.slug}`,
+      type: "website",
+      images,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} — Devy Relliani`,
+      description: work.summary,
+      images,
+    },
   };
 }
 
@@ -39,6 +56,7 @@ export default async function WorkPage({
   return (
     <>
       <SiteHeader />
+      <ScrollReveals key={slug} />
       <main id="main" className={`shell ${styles.main}`}>
         <Link href="/#work" className={styles.back}>
           <span aria-hidden="true">←</span> All selected work
@@ -64,13 +82,22 @@ export default async function WorkPage({
             <dd>{work.tools.join(" · ")}</dd>
           </div>
         </dl>
-        <ProjectCover work={work} large />
-        <p className={styles.coverCaption}>
-          An editorial introduction to the work.
-        </p>
+        <figure>
+          <ProjectCover work={work} large />
+          <figcaption className={styles.coverCaption}>{work.note}</figcaption>
+        </figure>
+        <dl className={styles.facts} aria-label="Project at a glance">
+          {work.facts.map((fact) => (
+            <div key={fact.label}>
+              <dt>{fact.label}</dt>
+              <dd>{fact.value}</dd>
+            </div>
+          ))}
+        </dl>
         <div className={styles.story}>
           {work.sections.map((section, sectionIndex) => (
             <section
+              data-reveal
               key={section.title}
               className={styles.storySection}
               aria-labelledby={`story-${sectionIndex}`}
@@ -87,15 +114,7 @@ export default async function WorkPage({
             </section>
           ))}
         </div>
-        <dl className={styles.facts}>
-          {work.facts.map((fact) => (
-            <div key={fact.label}>
-              <dt>{fact.label}</dt>
-              <dd>{fact.value}</dd>
-            </div>
-          ))}
-        </dl>
-        <p className={styles.note}>{work.note}</p>
+        <ProjectGallery slug={work.slug} />
         <Link href={`/work/${next.slug}`} className={styles.next}>
           <div>
             <span className="eyebrow">Next up / {next.company}</span>

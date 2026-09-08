@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { profile } from "@/data/portfolioData";
+import Star from "./Star";
 import styles from "./SiteHeader.module.css";
 
 const links = [
@@ -13,9 +15,48 @@ const links = [
 ];
 
 export default function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const menuButton = useRef<HTMLButtonElement>(null);
   const header = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateSection = () => {
+      frame = 0;
+      const readingLine = Math.max(110, window.innerHeight * 0.25);
+      let current = pathname.startsWith("/work/") ? "/#work" : "";
+      for (const link of links) {
+        const section = document.getElementById(link.href.slice(2));
+        if (section && section.getBoundingClientRect().top <= readingLine) {
+          current = link.href;
+        }
+      }
+      // A short footer cannot always reach the reading line on tall screens.
+      const contact = document.getElementById("contact");
+      if (
+        window.scrollY + window.innerHeight >=
+          document.documentElement.scrollHeight - 2 &&
+        contact &&
+        contact.getBoundingClientRect().top < window.innerHeight
+      ) {
+        current = "/#contact";
+      }
+      setActiveSection(current);
+    };
+    const scheduleUpdate = () => {
+      if (!frame) frame = window.requestAnimationFrame(updateSection);
+    };
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (!open) return;
@@ -25,7 +66,7 @@ export default function SiteHeader() {
         menuButton.current?.focus();
       }
     };
-    const closeOutside = (event: PointerEvent) => {
+    const closeOutside = (event: Event) => {
       if (!header.current?.contains(event.target as Node)) setOpen(false);
     };
     const breakpoint = window.matchMedia("(min-width: 761px)");
@@ -34,10 +75,12 @@ export default function SiteHeader() {
     };
     document.addEventListener("keydown", closeOnEscape);
     document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("focusin", closeOutside);
     breakpoint.addEventListener("change", closeOnResize);
     return () => {
       document.removeEventListener("keydown", closeOnEscape);
       document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("focusin", closeOutside);
       breakpoint.removeEventListener("change", closeOnResize);
     };
   }, [open]);
@@ -51,14 +94,21 @@ export default function SiteHeader() {
           onClick={() => setOpen(false)}
           aria-label="Devy Relliani, home"
         >
-          devy<span aria-hidden="true">✳</span>
+          devy
+          <Star className={styles.brandStar} size={25} />
         </Link>
         <span className={`eyebrow ${styles.edition}`}>
           A personal portfolio.
         </span>
         <nav className={styles.desktop} aria-label="Main navigation">
           {links.map((link) => (
-            <Link key={link.label} href={link.href}>
+            <Link
+              key={link.label}
+              href={link.href}
+              aria-current={
+                activeSection === link.href ? "location" : undefined
+              }
+            >
               {link.label}
             </Link>
           ))}
@@ -93,6 +143,7 @@ export default function SiteHeader() {
           <Link
             key={link.label}
             href={link.href}
+            aria-current={activeSection === link.href ? "location" : undefined}
             onClick={() => setOpen(false)}
           >
             {link.label}

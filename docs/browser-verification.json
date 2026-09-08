@@ -1,0 +1,52 @@
+{
+  "checks": [
+    "Homepage and four project cards",
+    "All three work filters show the correct projects",
+    "Experience expands and collapses with keyboard",
+    "CV download is byte-identical to supplied PDF",
+    "Copy email writes the correct address",
+    "Contact links match supplied sources",
+    "No document overflow at six widths, 320–1440px",
+    "Mobile menu navigation and Escape focus return",
+    "All four work pages load and fit phone/tablet/desktop",
+    "Project entry and return navigation",
+    "Unknown project returns a real 404",
+    "Terminal source content, command history and clear",
+    "Terminal CV link",
+    "Local API source accuracy and invalid-input responses",
+    "Social preview returns a PNG",
+    "Core content and CV remain available without JavaScript",
+    "Clipboard failure offers a usable fallback"
+  ],
+  "errors": [],
+  "a11y": [
+    {
+      "page": "home-desktop",
+      "violations": []
+    },
+    {
+      "page": "home-mobile",
+      "violations": []
+    },
+    {
+      "page": "sampoerna-product-qa",
+      "violations": []
+    },
+    {
+      "page": "pln-business-analysis",
+      "violations": []
+    },
+    {
+      "page": "its-social-media",
+      "violations": []
+    },
+    {
+      "page": "team-liquid-holiday",
+      "violations": []
+    },
+    {
+      "page": "terminal",
+      "violations": []
+    }
+  ]
+}
