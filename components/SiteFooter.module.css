@@ -26,10 +26,10 @@
 .contactGrid h2 {
   min-width: 0;
   overflow-wrap: anywhere;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: clamp(100px, 11vw, 168px);
-  line-height: 0.8;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 .contactGrid h2 em {
@@ -41,8 +41,8 @@
   overflow-wrap: anywhere;
 }
 .contactCopy > p {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 1.125rem;
+  line-height: 1.65;
   color: var(--on-dark-muted);
   margin-bottom: 22px;
 }
@@ -54,8 +54,8 @@
   gap: 26px;
   border-bottom: 1px solid var(--on-dark-muted);
   padding-bottom: 8px;
-  font-size: clamp(17px, 1.7vw, 25px);
-  letter-spacing: -0.035em;
+  font-size: clamp(1rem, 1.7vw, 1.5rem);
+  letter-spacing: normal;
 }
 .email:hover {
   color: var(--accent-light);
@@ -74,7 +74,7 @@
   color: var(--on-dark-muted);
   padding-block: 10px;
   min-height: 44px;
-  font-size: 11px;
+  font-size: 0.875rem;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -83,7 +83,7 @@
   color: var(--accent-light);
 }
 .copyStatus {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: var(--accent-light);
 }
 .socials {
@@ -93,7 +93,7 @@
   margin-top: 20px;
 }
 .socials a {
-  font-size: 12px;
+  font-size: 1rem;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -109,7 +109,7 @@
   align-items: center;
   border-top: 1px solid var(--dark-line);
   min-height: 85px;
-  font-size: 10px;
+  font-size: 0.875rem;
   color: var(--on-dark-muted);
 }
 .bottom a {
@@ -128,7 +128,7 @@
   }
   .email {
     gap: 15px;
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 @media (max-width: 650px) {
@@ -141,13 +141,13 @@
     padding-bottom: 35px;
   }
   .contactGrid h2 {
-    font-size: 120px;
+    font-size: 2.5rem;
   }
   .contactCopy > p {
-    font-size: 15px;
+    font-size: 1rem;
   }
   .email {
-    font-size: 20px;
+    font-size: 1.125rem;
   }
   .bottom {
     flex-wrap: wrap;
@@ -164,7 +164,7 @@
 }
 @media (max-width: 360px) {
   .email {
-    font-size: 17px;
+    font-size: 1rem;
   }
   .socials {
     gap: 20px;

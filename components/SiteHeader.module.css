@@ -9,13 +9,13 @@
   min-height: 84px;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 1.5rem;
 }
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  font-size: 31px;
+  font-size: 1.9375rem;
   font-weight: 700;
   letter-spacing: -2px;
   line-height: 1;
@@ -32,18 +32,18 @@
 .edition {
   margin-left: 15px;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 1rem;
   letter-spacing: 0.08em;
 }
 .desktop {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 1.5rem;
   margin-left: auto;
 }
 .desktop a {
   position: relative;
-  font-size: 13px;
+  font-size: 1rem;
   padding-block: 12px;
   text-underline-offset: 6px;
 }
@@ -72,12 +72,12 @@
 }
 .resume {
   display: flex;
-  gap: 28px;
+  gap: 1rem;
   align-items: center;
   border: 1px solid var(--ink);
   border-radius: 40px;
   padding: 9px 18px;
-  font-size: 12px;
+  font-size: 1rem;
   min-height: 42px;
 }
 .resume:is(:hover, :focus-visible) {
@@ -88,7 +88,7 @@
   display: none;
   border: 0;
   background: none;
-  font-size: 12px;
+  font-size: 1rem;
   min-height: 44px;
 }
 .mobile {
@@ -102,15 +102,15 @@
   display: flex;
   justify-content: space-between;
   padding: 14px 0;
-  font-size: 22px;
+  font-size: 1.25rem;
   border-bottom: 1px solid var(--line);
 }
-@media (max-width: 1100px) {
+@media (max-width: 1250px) {
   .edition {
     display: none;
   }
   .inner {
-    gap: 28px;
+    gap: 1rem;
   }
 }
 @media (min-width: 761px) {
@@ -121,7 +121,7 @@
 @media (max-width: 760px) {
   .inner {
     min-height: 72px;
-    gap: 20px;
+    gap: 0.75rem;
   }
   .desktop {
     display: none;
@@ -135,6 +135,16 @@
     display: block;
   }
   .brand {
-    font-size: 28px;
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .inner {
+    gap: 0.5rem;
+  }
+  .resume {
+    padding-inline: 0.625rem;
+    gap: 0.5rem;
   }
 }

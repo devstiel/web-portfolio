@@ -1,0 +1,274 @@
+{
+  "date": "2026-09-25",
+  "lint": "passed",
+  "production_build": "passed; 11 generated entries",
+  "route_checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "h1": "Devy Relliani.",
+      "duplicate_ids": false,
+      "explanation_before_visuals": null
+    },
+    {
+      "path": "/work/sampoerna-product-qa",
+      "status": 200,
+      "h1": "AYO Kasir & MyAYO product QA",
+      "duplicate_ids": false,
+      "explanation_before_visuals": true
+    },
+    {
+      "path": "/work/pln-business-analysis",
+      "status": 200,
+      "h1": "EV-charging performance reporting",
+      "duplicate_ids": false,
+      "explanation_before_visuals": true
+    },
+    {
+      "path": "/work/its-social-media",
+      "status": 200,
+      "h1": "ITS social media leadership",
+      "duplicate_ids": false,
+      "explanation_before_visuals": true
+    },
+    {
+      "path": "/work/team-liquid-holiday",
+      "status": 200,
+      "h1": "Team Liquid holiday illustration",
+      "duplicate_ids": false,
+      "explanation_before_visuals": true
+    },
+    {
+      "path": "/terminal",
+      "status": 200,
+      "h1": "For thekeyboard inclined.",
+      "duplicate_ids": false,
+      "explanation_before_visuals": null
+    }
+  ],
+  "internal_anchor_checks": 65,
+  "linked_assets_checked": 32,
+  "assets": [
+    {
+      "path": "/_next/image?url=%2Fwork%2Fdevy-portrait.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fits-environment-day.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fits-music-concert.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fits-packing.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fits-team.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fits-world-aids-day.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fpln-report-december.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fwork%2Fpln-report-november.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/07fm4jj9fn71i.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/0lc5_cu6__rnz.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/0qj9oqsp5nqb8.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/1j_9b-l0n6u-t.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/1z99mlp5cofct.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/22emux2du5j43.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/23fz3da3jz1kl.css",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/25q6xlj0mx4vp.css",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/3fntmmi971322.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-1hfrg9pfr9731.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/303804218d80822e-s.p.3lj349bs9hfu1.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/5c285b27cdda1fe8-s.p.2_mbdogr7ni8i.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/7ebf22b5a21034f8-s.p.3j3877k49yy0l.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/d9b5d46d9a89ffe6-s.p.0xxdg0o7uh536.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/e41d5df559864f9e-s.p.1g73gv09-xcb6.woff2",
+      "status": 200
+    },
+    {
+      "path": "/devy-relliani-saffiyah-cv.pdf",
+      "status": 200
+    },
+    {
+      "path": "/work/its-environment-day.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/its-music-concert.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/its-packing.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/its-team.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/its-world-aids-day.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/pln-report-december.webp",
+      "status": 200
+    },
+    {
+      "path": "/work/pln-report-november.webp",
+      "status": 200
+    }
+  ],
+  "unknown_work_route": 404,
+  "cv_matches_public_and_source_sha256": "ce758a04a93b4513c1b4b8c3dea648a1c30d74f8a07e5ceb7565fe9d755efb0f",
+  "server_html_without_js": {
+    "all_four_projects_present": true,
+    "all_experience_summaries_visible_in_markup": true,
+    "visual_rendering_verified": false,
+    "experience_summaries_verified": 5
+  },
+  "token_contrast": [
+    {
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 13.619,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "paper",
+      "ratio": 5.516,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "muted",
+      "background": "panel",
+      "ratio": 4.87,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "paper",
+      "ratio": 7.794,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "accent",
+      "background": "panel",
+      "ratio": 6.881,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "paper",
+      "background": "ink",
+      "ratio": 13.619,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "on-dark-muted",
+      "background": "ink",
+      "ratio": 9.475,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "accent-light",
+      "background": "ink",
+      "ratio": 8.83,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "paper",
+      "background": "accent",
+      "ratio": 7.794,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "accent-light",
+      "background": "dark-panel",
+      "ratio": 7.642,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "on-dark-muted",
+      "background": "dark-panel",
+      "ratio": 8.2,
+      "normal_text_4_5_pass": true
+    },
+    {
+      "foreground": "ink",
+      "background": "panel",
+      "ratio": 12.023,
+      "normal_text_4_5_pass": true
+    }
+  ],
+  "browser_validation": {
+    "status": "not run; connector returned no browsers or native apps",
+    "pending": [
+      "320/390/768/1440px layouts on home and four work pages",
+      "200% zoom, 400% reflow, text spacing",
+      "keyboard and mobile menu interactions",
+      "filters after hydration",
+      "clipboard success and fallback",
+      "reduced motion and no-JavaScript visual rendering"
+    ]
+  }
+}

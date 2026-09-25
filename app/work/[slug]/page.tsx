@@ -5,7 +5,6 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProjectCover from "@/components/ProjectCover";
 import ProjectGallery from "@/components/ProjectGallery";
-import ScrollReveals from "@/components/ScrollReveals";
 import { works } from "@/data/portfolioData";
 import styles from "./work.module.css";
 
@@ -56,7 +55,6 @@ export default async function WorkPage({
   return (
     <>
       <SiteHeader />
-      <ScrollReveals key={slug} />
       <main id="main" className={`shell ${styles.main}`}>
         <Link href="/#work" className={styles.back}>
           <span aria-hidden="true">←</span> All selected work
@@ -78,14 +76,10 @@ export default async function WorkPage({
             <dd>{work.period}</dd>
           </div>
           <div>
-            <dt>In the mix</dt>
+            <dt>Tools and methods</dt>
             <dd>{work.tools.join(" · ")}</dd>
           </div>
         </dl>
-        <figure>
-          <ProjectCover work={work} large />
-          <figcaption className={styles.coverCaption}>{work.note}</figcaption>
-        </figure>
         <dl className={styles.facts} aria-label="Project at a glance">
           {work.facts.map((fact) => (
             <div key={fact.label}>
@@ -97,7 +91,6 @@ export default async function WorkPage({
         <div className={styles.story}>
           {work.sections.map((section, sectionIndex) => (
             <section
-              data-reveal
               key={section.title}
               className={styles.storySection}
               aria-labelledby={`story-${sectionIndex}`}
@@ -114,6 +107,10 @@ export default async function WorkPage({
             </section>
           ))}
         </div>
+        <figure>
+          <ProjectCover work={work} large />
+          <figcaption className={styles.coverCaption}>{work.note}</figcaption>
+        </figure>
         <ProjectGallery slug={work.slug} />
         <Link href={`/work/${next.slug}`} className={styles.next}>
           <div>

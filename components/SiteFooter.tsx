@@ -2,7 +2,6 @@ import Link from "next/link";
 import { profile } from "@/data/portfolioData";
 import Star from "./Star";
 import CopyEmail from "./CopyEmail";
-import RevealHeading from "./RevealHeading";
 import styles from "./SiteFooter.module.css";
 
 export default function SiteFooter() {
@@ -14,8 +13,8 @@ export default function SiteFooter() {
           <Star />
         </div>
         <div className={styles.contactGrid}>
-          <RevealHeading first="LET’S" second="TALK." />
-          <div className={styles.contactCopy} data-reveal>
+          <h2>Let’s talk.</h2>
+          <div className={styles.contactCopy}>
             <p>
               A role, a project, or a good conversation.
               <br />

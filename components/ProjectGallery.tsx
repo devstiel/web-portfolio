@@ -7,21 +7,20 @@ export default function ProjectGallery({ slug }: { slug: string }) {
   if (!media) return null;
   return (
     <section className={styles.gallery} aria-labelledby="gallery-title">
-      <div data-reveal>
+      <div>
         <p className="eyebrow">A closer look</p>
-        <h2 id="gallery-title">From the work itself.</h2>
+        <h2 id="gallery-title">Work samples</h2>
         <p className={styles.intro}>{media.introduction}</p>
       </div>
       <div
         className={`${styles.grid} ${slug === "pln-business-analysis" ? styles.reports : ""}`}
       >
         {media.gallery.map((asset) => (
-          <figure key={asset.src} data-reveal="project">
+          <figure key={asset.src}>
             <a
               href={asset.src}
               target="_blank"
               rel="noreferrer"
-              data-reveal-visual
               aria-label={`Open full image: ${asset.alt} (opens in a new tab)`}
             >
               <Image
@@ -39,7 +38,7 @@ export default function ProjectGallery({ slug }: { slug: string }) {
                 View image ↗
               </span>
             </a>
-            <figcaption data-reveal-copy>{asset.caption}</figcaption>
+            <figcaption>{asset.caption}</figcaption>
           </figure>
         ))}
       </div>

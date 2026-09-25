@@ -7,9 +7,8 @@ export const profile = {
   introduction:
     "I’m Devy, a Computer Science graduate from ITS. I test digital products, make sense of data, and help creative teams turn ideas into things people can use and enjoy.",
   about: [
-    "“What happens if the user does this instead?” That’s the kind of question I like working through. I’m interested in how people use things, where they get stuck, and the details that make an experience feel right.",
-    "That curiosity has taken me into product QA, business analysis, and creative work. Sometimes I’m translating a requirement into test cases. Other times, I’m organising a report or helping a team turn an idea into something people can see.",
-    "I studied Computer Science at ITS. Along the way, I led creative teams, worked on robotics communications, and illustrated a holiday campaign for Team Liquid. I like having both the analytical and creative sides of my brain at the table.",
+    "I’m a Computer Science graduate from ITS with experience in product QA, business analysis, and creative team leadership. At Sampoerna, I translate requirements into test cases for AYO Kasir and MyAYO. At PLN UP3 Bekasi, I worked on EV-charging performance reporting and operational analysis.",
+    "My creative work includes leading the ITS social media team, supporting robotics communications, and illustrating a holiday campaign for Team Liquid. Across these roles, I’ve worked with teams to turn requirements and ideas into test plans, reports, and visual work.",
   ],
   resume: "/devy-relliani-saffiyah-cv.pdf",
   socials: [
@@ -47,7 +46,7 @@ export const works: Work[] = [
     category: "Product quality assurance",
     year: "2026",
     theme: "qa",
-    title: "Looking beyond the happy path.",
+    title: "AYO Kasir & MyAYO product QA",
     summary:
       "Turning product requirements into test cases for AYO Kasir and MyAYO, and helping teams make informed release decisions.",
     role: "Product Quality Assurance Intern",
@@ -88,7 +87,7 @@ export const works: Work[] = [
     category: "Business analysis",
     year: "2025",
     theme: "analytics",
-    title: "Making the numbers easier to use.",
+    title: "EV-charging performance reporting",
     summary:
       "Bringing EV-charging transactions and operational data together for performance reporting and business planning.",
     role: "Business Analyst Intern",
@@ -125,7 +124,7 @@ export const works: Work[] = [
         ],
       },
     ],
-    note: "Original reporting artwork from my portfolio. The cover shows the November 2025 snapshot; the 39,349-transaction scope below comes from December. Both snapshots are included in the gallery.",
+    note: "Original reporting artwork from my portfolio. The cover shows the November 2025 snapshot; the 39,349-transaction scope above comes from December. Both snapshots are included in the gallery.",
   },
   {
     slug: "its-social-media",
@@ -134,7 +133,7 @@ export const works: Work[] = [
     category: "Creative & team leadership",
     year: "2024–25",
     theme: "creative",
-    title: "Many voices. A shared direction.",
+    title: "ITS social media leadership",
     summary:
       "Leading a team of 21 social media specialists across five platforms, from content planning to performance reviews.",
     role: "Lead Social Media Specialist · Contract",
@@ -172,7 +171,7 @@ export const works: Work[] = [
         ],
       },
     ],
-    note: "Original ITS illustrations from my creative portfolio, arranged for this cover. The artwork spans my broader ITS involvement; the leadership outcomes below belong to the team.",
+    note: "Original ITS illustrations from my creative portfolio, arranged for this cover. The artwork spans my broader ITS involvement; the leadership outcomes above belong to the team.",
   },
   {
     slug: "team-liquid-holiday",
@@ -181,7 +180,7 @@ export const works: Work[] = [
     category: "Commissioned illustration",
     year: "2021",
     theme: "illustration",
-    title: "A little holiday spirit, drawn by hand.",
+    title: "Team Liquid holiday illustration",
     summary:
       "A commissioned Christmas card and wallpaper collection for Team Liquid’s League of Legends team.",
     role: "Commissioned illustrator",

@@ -1,6 +1,6 @@
 # Devy Relliani — portfolio
 
-A personal portfolio for Devy Relliani Saffiyah, built with Next.js App Router, React, TypeScript, and CSS Modules. The editorial layout combines original work samples, typographic covers, scroll reveals, and a small optional terminal.
+A personal portfolio for Devy Relliani Saffiyah, built with Next.js App Router, React, TypeScript, and CSS Modules. The cream and burgundy layout combines readable project summaries, original work samples, typographic covers, and a small optional terminal.
 
 ## Run locally
 
@@ -23,13 +23,13 @@ For deployment, set `NEXT_PUBLIC_SITE_URL` to the site's actual absolute URL so 
 
 ## Pages and behaviour
 
-- `/`: introduction, filterable selected work, About, capabilities, expandable experience, education, scholarships, and contact.
+- `/`: introduction, filterable selected work, About, capabilities, visible experience summaries, education, scholarships, and contact.
 - `/work/[slug]`: four statically generated work overviews. Each has role and timing, context and deliverables, carefully attributed figures, and a link to the next project. Unknown slugs return a 404.
 - `/terminal`: optional keyboard portfolio index. Supports `about`, `work`, `experience`, `skills`, `contact`, `cv`, `help`, and `clear`, as well as company names. Up/down browse session command history. History is in memory and resets on reload.
 - `/api/chat`: retained as a compatibility endpoint, now a deterministic local lookup using the same public content. Accepts `{ "prompt": "contact" }`. Invalid JSON/prompts return 400; bodies over 2,000 characters return 413. Prompts are limited to 500 characters. No external model calls or secret keys are used.
 - `/opengraph-image`: generated social preview. The favicon is `app/icon.svg`.
 
-The desktop navigation becomes a disclosure menu on small screens. The menu closes on navigation, Escape, outside pointer or keyboard focus, and resizing to desktop. Navigation indicates the section being read. Essential content is server-rendered and visible without scroll animations. Native experience disclosures, ordinary project links, a skip link, focus states, reduced-motion styling, and a copy-email fallback support the main browsing path.
+The desktop navigation becomes a disclosure menu on small screens. The menu closes on navigation, Escape, outside pointer or keyboard focus, and resizing to desktop. Navigation indicates the section being read. Essential content is server-rendered and visible without scroll animations. Visible experience summaries, ordinary project links, a skip link, focus states, reduced-motion styling, and a copy-email fallback support the main browsing path.
 
 ## Content and sources
 
@@ -73,7 +73,9 @@ The former gamified dashboard, fictional résumé, skill levels, sound system, a
 
 ## Verification
 
-The completed redesign passed production build, lint, 17 browser flow checks, and the tested automated accessibility rules. See [verification notes and previews](docs/portfolio-redesign.md) for the scope, evidence, and remaining content limitations.
+The current [readability update](docs/portfolio-readability.md) simplifies the hero, aligns work cards, increases text sizes, and puts project explanations before large visuals. Essential text is static and experience summaries are visible immediately. The earlier motion and preview documents below describe historical versions; they are not visual verification of the current layout.
+
+The earlier redesign passed production build, lint, 17 browser flow checks, and the tested automated accessibility rules. See [verification notes and previews](docs/portfolio-redesign.md) for the scope, evidence, and remaining content limitations.
 
 The subsequent [award-reference review and refinements](docs/portfolio-polish.md) covers active navigation, keyboard menu behavior, cover interactions, project reading order, and project-specific sharing metadata. Cover motion responds to hover and keyboard focus and is disabled for reduced-motion preferences.
 
@@ -87,6 +89,6 @@ The latest [parchment and burgundy palette](docs/portfolio-colour.md) replaces t
 
 The [follow-up review](docs/portfolio-review.md) fixes horizontal overflow with increased text spacing and settles work-filter animations when a project receives keyboard focus. It checks all six pages with spacing overrides in Chromium, Firefox, and WebKit, along with mobile section links, landscape layout, contrast, and the existing browsing and reveal checks.
 
-Run lint and the production build after content or layout changes. Browser checks should cover desktop and mobile widths, all work filters and work pages, keyboard navigation, experience disclosures, CV delivery, clipboard feedback, and terminal commands. Compare the downloaded CV to the source PDF. Check both reduced motion and the page without JavaScript; do not equate a passing build with visual or accessibility verification.
+Run lint and the production build after content or layout changes. Browser checks should cover desktop and mobile widths, all work filters and work pages, keyboard navigation, visible experience summaries, CV delivery, clipboard feedback, and terminal commands. Compare the downloaded CV to the source PDF. Check both reduced motion and the page without JavaScript; do not equate a passing build with visual or accessibility verification.
 
 The research references informed the composition; external source code, fonts from those repositories, and their artwork were not copied into this project.
